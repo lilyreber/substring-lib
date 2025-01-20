@@ -1,2 +1,55 @@
 # substring-lib
-Library for searching substrings
+This C++ Library provides tools for solving common problems, 
+such as substring search and pattern matching for different 
+purposes
+
+
+## Algorithms
+
+---
+Algorithms implemented in the substring-lib include the following. For more information on individual algorithms please take a look at the [docs](docs/Algo-description.pdf).
+1. Knuth-Morris-Pratt (KMP) Algorithm
+2. Boyer-Moore Algorithm
+3. Rabin-Karp Algorithm
+4. Suffix Array Construction
+5. Z-Algorithm
+6. Aho-Corasick Algorithm
+7. Not So Naive Algorithm
+8. Max Common Substring
+9. Kasai Algorithm
+10. Quick Search Algorithm
+
+## Getting Started
+
+---
+
+## Usage
+
+---
+
+## CI/CD
+
+---
+![Build Status](https://github.com/lilyrebersubstring-lib/actions/workflows/cmake-single-platform.yml/cmake-single-platform.svg)
+
+## Contributing
+
+---
+```substring-lib``` - is HSE university project.
+Therefore, we welcome your comments and advice. For any questions (including bugreports and recommendations), please contact our developers
+
+## License
+
+---
+This project is licensed under the [MIT license](LICENSE)
+
+## Contributors
+
+---
+* [Залилова Диана](https://www.github.com/mediana105)
+* [Иванова Арина](https://www.github.com/Arishkamu)
+* [Имамутдинова Лилия](https://www.github.com/lilyreber)
+* [Исаева Екатерина](https://www.github.com/karambo3a)
+* [Мухаметлиева Алина](https://www.github.com/Alina-Muha)
+
+HSE SPB, AMIS-3
