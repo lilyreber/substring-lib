@@ -7,7 +7,7 @@ find_package(GTest REQUIRED)
 
 include_directories(${GTEST_INCLUDE_DIRS})
 
-add_executable(substring_lib src/algorithms/kmp.cpp)
+add_executable(substring_lib src/substring_lib.cpp)
 
 add_executable(substring_experimental test/experimental/benchmark.cpp)
 add_executable(substring_test test/algorithms/test_kmp.cpp)
