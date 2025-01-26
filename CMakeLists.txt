@@ -26,3 +26,10 @@ add_executable(${TEST_NAME}
 target_link_libraries(${TEST_NAME} PRIVATE
         substring_lib
 )
+
+enable_testing()
+
+add_test(
+  NAME ${TEST_NAME}
+  COMMAND $<TARGET_FILE:${TEST_NAME}>
+)
