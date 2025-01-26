@@ -13,8 +13,12 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-add_executable(substring_lib src/substring_lib.cpp)
-#add_executable(substring_experimental test/experimental/benchmark.cpp)
+include_directories(include/algorithms include)
+
+add_library(substring_lib STATIC src/substring_lib.cpp src/algorithms/kmp.cpp)
+
+add_executable(substring_experimental test/experimental/benchmark.cpp)
+target_link_libraries(substring_experimental PRIVATE substring_lib)
 
 
 set(TEST_NAME ${PROJECT_NAME}_tests)
