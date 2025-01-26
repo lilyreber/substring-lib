@@ -1,6 +1,3 @@
-//
-// Created by Arina on 1/17/25.
-//
 #include "kmp.h"
 
 KMP::KMP(const std::string& pattern) : pattern(pattern) {
@@ -42,10 +39,9 @@ std::vector<int> KMP::search(const std::string& text) const {
         }
         if (j == m) {
             result.push_back(i - m + 1);
-            j = lps[j - 1]; 
+            j = lps[j - 1];
         }
     }
 
     return result;
 }
-

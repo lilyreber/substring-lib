@@ -1,7 +1,3 @@
-//
-// Created by Arina on 1/17/25.
-//
-
 #include "substring_lib.h"
 #include "iostream"
 
