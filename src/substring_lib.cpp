@@ -2,7 +2,7 @@
 #include "kmp.h"
 #include "iostream"
 
-std::vector<int> search_pattern(const std::string& text, const std::string& pattern, AlgorithmType type) {
+std::vector<std::size_t> search_pattern(const std::string& text, const std::string& pattern, AlgorithmType type) {
     switch (type) {
         case AlgorithmType::KMP:
             return KMP(pattern).search(text);

@@ -5,11 +5,11 @@ KMP::KMP(const std::string& pattern) : pattern(pattern) {
 }
 
 void KMP::computeLPS() {
-    int m = pattern.size();
+    auto m = pattern.size();
     lps.resize(m, 0);
-    int j = 0;
+    std::size_t j = 0;
 
-    for (int i = 1; i < m; ++i) {
+    for (std::size_t i = 1; i < m; ++i) {
         while (j > 0 && pattern[i] != pattern[j]) {
             j = lps[j - 1];
         }
@@ -20,17 +20,17 @@ void KMP::computeLPS() {
     }
 }
 
-std::vector<int> KMP::search(const std::string& text) const {
-    std::vector<int> result;
-    int n = text.size();
-    int m = pattern.size();
-    int j = 0;
+std::vector<std::size_t> KMP::search(const std::string& text) const {
+    std::vector<std::size_t> result;
+    auto n = text.size();
+    auto m = pattern.size();
+    std::size_t j = 0;
 
     if (m == 0) {
         return result;
     }
 
-    for (int i = 0; i < n; ++i) {
+    for (std::size_t i = 0; i < n; ++i) {
         while (j > 0 && text[i] != pattern[j]) {
             j = lps[j - 1];
         }
