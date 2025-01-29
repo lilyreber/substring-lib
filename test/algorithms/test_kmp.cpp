@@ -1,9 +1,7 @@
-#include <iostream>
 #include <string>
 #include <vector>
 
 #include "doctest.h"
-#include "kmp.h"
 #include "substring_lib.h"
 
 TEST_CASE("Empty text and empty pattern") {
