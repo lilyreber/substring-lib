@@ -23,37 +23,48 @@ Algorithms implemented in the substring-lib include the following. For more info
 ### For Linux 
 
 1. **Build the project:**
+```sh
     mkdir build
     cd build
     cmake ..
     make
+```
 
 2. **Run the tests:**
+```sh
     ctest
+```
 
 ### For Windows (MSVC)
 
 1. **Build the project:**
+```sh
     mkdir build
     cd build
     cmake .. -G "Visual Studio 16 2019" # Change generator if using another version of Visual Studio
     cmake --build . --config Release
-
+```
 
 2. **Run the tests:**
+```sh
     ctest --build . --config Release
+```
 
 ### For macOS
 
 1. **Build the project:**
+```sh
     mkdir build
     cd build
     cmake ..
     make
+```
 
 
 2. **Run the tests:**
+```sh
     ctest
+```
 
 
 ## CI/CD
