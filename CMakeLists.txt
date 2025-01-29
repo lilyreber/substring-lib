@@ -4,12 +4,15 @@ project(substring_lib)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-include_directories(include/algorithms include)
+
 
 add_library(substring_lib STATIC
         src/substring_lib.cpp
         src/algorithms/kmp.cpp
 )
+target_include_directories(substring_lib PUBLIC
+        include/algorithms
+        include)
 
 add_executable(substring_experimental
         test/experimental/benchmark.cpp

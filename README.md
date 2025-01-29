@@ -66,6 +66,16 @@ Algorithms implemented in the substring-lib include the following. For more info
     ctest
 ```
 
+## Installation Header-only
+Substring-lib может быть подключена как Header-only библиотека. 
+Для этого скачайте заголовочные файлы, добавьте их в свой проект.
+
+Теперь вы можете использовать библиотеку
+```c++
+#include <substring_lib.h>
+```
+
+Для больших деталей перейдите к [инструкции по установке](include/README.md)
 
 ## CI/CD
 
