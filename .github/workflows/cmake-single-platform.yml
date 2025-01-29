@@ -43,7 +43,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: clang-format --version
-      - run: for file in $(find . -iname '*.cpp' -or -iname '*.c' -or -iname '*.h' -and -not -iname 'doctest.h' ); do diff -u <(cat "$file") <(clang-format-12 "$file") || exit 1; done
+      - run: for file in $(find . -iname '*.cpp' -or -iname '*.c' -or -iname '*.h' -and -not -iname 'doctest.h' ); do diff -u <(cat "$file") <(clang-format "$file") || exit 1; done
   
 
 
