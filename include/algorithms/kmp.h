@@ -1,19 +1,19 @@
 #ifndef KMP_H
 #define KMP_H
 
-#include <vector>
 #include <string>
+#include <vector>
 
 class KMP {
-public:
-    explicit KMP(const std::string& pattern);
-    std::vector<std::size_t> search(const std::string& text) const;
+   public:
+    explicit KMP(const std::string &pattern);
+    std::vector<std::size_t> search(const std::string &text) const;
 
-private:
+   private:
     void computeLPS();
 
     std::string pattern;
     std::vector<std::size_t> lps;
 };
 
-#endif // KMP_H
+#endif  // KMP_H

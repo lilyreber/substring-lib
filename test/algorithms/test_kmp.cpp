@@ -1,9 +1,10 @@
-#include "doctest.h"
-#include "substring_lib.h"
-#include "kmp.h"
-#include <vector>
-#include <string>
 #include <iostream>
+#include <string>
+#include <vector>
+
+#include "doctest.h"
+#include "kmp.h"
+#include "substring_lib.h"
 
 TEST_CASE("Empty text and empty pattern") {
     auto result = search_pattern("", "", AlgorithmType::KMP);
@@ -32,7 +33,8 @@ TEST_CASE("Text and pattern are the same") {
 
 TEST_CASE("Text with one letter and one letter pattern") {
     auto result = search_pattern("aaaaaaaaaaaaaaaaaaaaa", "a", AlgorithmType::KMP);
-    CHECK_EQ(result, std::vector<std::size_t>{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
+    CHECK_EQ(result,
+             std::vector<std::size_t>{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
 }
 
 TEST_CASE("Text and big pattern") {

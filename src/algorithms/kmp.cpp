@@ -1,8 +1,6 @@
 #include "kmp.h"
 
-KMP::KMP(const std::string& pattern) : pattern(pattern) {
-    computeLPS();
-}
+KMP::KMP(const std::string &pattern) : pattern(pattern) { computeLPS(); }
 
 void KMP::computeLPS() {
     auto m = pattern.size();
@@ -20,7 +18,7 @@ void KMP::computeLPS() {
     }
 }
 
-std::vector<std::size_t> KMP::search(const std::string& text) const {
+std::vector<std::size_t> KMP::search(const std::string &text) const {
     std::vector<std::size_t> result;
     auto n = text.size();
     auto m = pattern.size();
