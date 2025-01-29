@@ -1,12 +1,12 @@
 # Substring_lib Header-Only Installation
-Для установки заголовков скопируйте `include` директорию в ваш проект и добавьте ее содержимое в ваш include path
+Copy the `include` directory to your project and add it to your include path
 
-1. Скопируйте `include` в ваш проект
-2. Перед компиляцией добавьте содержимое в include
+1. Copy `include` to your project.
+2. Before compiling, add the directory to your include path.
     ```CMake
     include_directories(include include/algorithms)
     ```
-3.  Добавьте заголовочный файл substring-lib в ваш исходник
+3. Include the graaf header in your sources.
     ```c++
     #include <substring_lib.h>
     ```

@@ -67,10 +67,10 @@ Algorithms implemented in the substring-lib include the following. For more info
 ```
 
 ## Installation Header-only
-Substring-lib может быть подключена как Header-only библиотека. 
-Для этого скачайте заголовочные файлы, добавьте их в свой проект.
+Substring-lib can be included as a header-only library.
+Download the `include` directory from our repository and add it to your include path. 
 
-Теперь вы можете использовать библиотеку
+You can now use Graaf in your source files:
 ```c++
 #include <substring_lib.h>
 ```
