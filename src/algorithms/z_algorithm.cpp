@@ -29,12 +29,16 @@ std::vector<std::size_t> ZAlgorithm::computeZFunction (std::string &s) const {
 }
 
 std::vector<std::size_t> ZAlgorithm::search(const std::string &text) const {
-    std::string s = pattern + '#' + text;
-    auto zFunction = computeZFunction(s);
+    std::vector<std::size_t> result;
     auto n = text.size();
     auto m = pattern.size();
+    if (m == 0) {
+        return result;
+    }
 
-    std::vector<std::size_t> result;
+    std::string s = pattern + '#' + text;
+    auto zFunction = computeZFunction(s);
+
     for (int i = m + 1; i < s.size(); ++i){
         // in positions where the value of the zFunction is equal to |pattern| = m,
         // the substring that matches the pattern starts.

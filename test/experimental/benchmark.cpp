@@ -13,7 +13,7 @@ int main() {
     std::cout << "bm_res_0: " << bm_res[0] << "\n"
               << "bm_res_1: " << bm_res[1] << "\n";
 
-    auto z_res = search_pattern("aabaabcabbcabc", "abc", AlgorithmType::Z_FUNCTION);
+    auto z_res = search_pattern("aabaabcabbcabc", "abc", AlgorithmType::Z_ALGORITHM);
     std::cout << "z_res_size: " << z_res.size() << "\n";
     std::cout << "z_res_0: " << z_res[0] << "\n"
               << "z_res_1: " << z_res[1] << "\n";

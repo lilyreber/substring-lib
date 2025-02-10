@@ -5,7 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 
-
 add_library(substring_lib STATIC
         src/substring_lib.cpp
         src/algorithms/kmp.cpp
@@ -23,18 +22,22 @@ target_link_libraries(substring_experimental PRIVATE
         substring_lib
 )
 
-set(TEST_NAME ${PROJECT_NAME}_tests)
-add_executable(${TEST_NAME}
+set(TEST_SOURCES
+    test/algorithms/test_kmp.cpp
+    test/algorithms/test_z_algorithm.cpp
+)
+
+foreach(TEST_SOURCE ${TEST_SOURCES})
+    get_filename_component(TEST_NAME ${TEST_SOURCE} NAME_WE)
+    add_executable(${TEST_NAME}
         test/algorithms/doctest_main.cpp
-        test/algorithms/test_kmp.cpp
-)
-target_link_libraries(${TEST_NAME} PRIVATE
-        substring_lib
-)
+        ${TEST_SOURCE}
+    )
+    target_link_libraries(${TEST_NAME} PRIVATE substring_lib)
+    add_test(
+        NAME ${TEST_NAME}
+        COMMAND $<TARGET_FILE:${TEST_NAME}>
+    )
+endforeach()
 
 enable_testing()
-
-add_test(
-  NAME ${TEST_NAME}
-  COMMAND $<TARGET_FILE:${TEST_NAME}>
-)
