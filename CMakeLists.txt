@@ -9,6 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_library(substring_lib STATIC
         src/substring_lib.cpp
         src/algorithms/kmp.cpp
+        src/algorithms/boyer-moore.cpp
 )
 target_include_directories(substring_lib PUBLIC
         include/algorithms
