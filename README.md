@@ -18,11 +18,64 @@ Algorithms implemented in the substring-lib include the following. For more info
 9. Kasai Algorithm
 10. Quick Search Algorithm
 
-## Getting Started
+## Build
+
+### For Linux 
+
+1. **Build the project:**
+```sh
+    mkdir build
+    cd build
+    cmake ..
+    make
+```
+
+2. **Run the tests:**
+```sh
+    ctest
+```
+
+### For Windows (MSVC)
+
+1. **Build the project:**
+```sh
+    mkdir build
+    cd build
+    cmake .. -G "Visual Studio 16 2019" # Change generator if using another version of Visual Studio
+    cmake --build . --config Release
+```
+
+2. **Run the tests:**
+```sh
+    ctest --build . --config Release
+```
+
+### For macOS
+
+1. **Build the project:**
+```sh
+    mkdir build
+    cd build
+    cmake ..
+    make
+```
 
 
-## Usage
+2. **Run the tests:**
+```sh
+    ctest
+```
 
+## Installation Header-only
+Substring-lib can be included as a header-only library.
+Download the `include` directory from our repository and add it to your include path. 
+
+You can now use Graaf in your source files:
+```c++
+#include <substring_lib.h>
+```
+
+Для больших деталей перейдите к [инструкции по установке](include/README.md)
 
 ## CI/CD
 
