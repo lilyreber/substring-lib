@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-enum class AlgorithmType { KMP, BOYER_MOORE };
+enum class AlgorithmType { KMP, BOYER_MOORE, Z_ALGORITHM };
 
 std::vector<std::size_t> search_pattern(const std::string &text, const std::string &pattern, AlgorithmType type);
 
