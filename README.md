@@ -78,8 +78,7 @@ You can now use Graaf in your source files:
 Для больших деталей перейдите к [инструкции по установке](include/README.md)
 
 ## CI/CD
-
-![Build Status](https://github.com/lilyrebersubstring-lib/actions/workflows/cmake-single-platform.yml/cmake-single-platform.svg)
+![Build Status](https://github.com/lilyreber/substring-lib/actions/workflows/cmake-single-platform.yml/badge.svg)
 
 ## Contributing
 
