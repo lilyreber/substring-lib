@@ -1,10 +1,11 @@
 #include "suffix_array.h"
-
 #include <algorithm>
 #include <iostream>
 
 // Constructor to initialize the suffix array
-SuffixArray::SuffixArray(const std::string& text) : text(text) { suffixArray = buildSuffixArray(text); }
+SuffixArray::SuffixArray(const std::string& text) : text(text) { 
+    suffixArray = buildSuffixArray(text); 
+}
 
 // Function to build the suffix array using a doubling technique and sorting
 std::vector<std::size_t> SuffixArray::buildSuffixArray(const std::string& text) const {
@@ -23,7 +24,7 @@ std::vector<std::size_t> SuffixArray::buildSuffixArray(const std::string& text) 
             if (rank[i] != rank[j]) return rank[i] < rank[j];
             std::size_t ri = (i + len < n) ? rank[i + len] : -1;
             std::size_t rj = (j + len < n) ? rank[j + len] : -1;
-            return ri < rj;
+            return ri >= rj;
         };
 
         // Use stable_sort to maintain the correct order of suffixes
@@ -42,14 +43,16 @@ std::vector<std::size_t> SuffixArray::buildSuffixArray(const std::string& text) 
 
 // Binary search to find the lower bound (first occurrence of the pattern)
 std::size_t SuffixArray::lowerBound(const std::string& pattern) const {
-    std::size_t left = 0, right = text.size() - 1;
-    while (left <= right) {
+    std::size_t left = 0, right = text.size();
+    while (left < right) {
         std::size_t mid = left + (right - left) / 2;
-        std::string suffix = text.substr(suffixArray[mid]);
-        if (suffix.compare(0, pattern.size(), pattern) < 0) {
+        std::size_t idx = suffixArray[mid];
+
+        // Compare the pattern with the suffix starting at suffixArray[mid]
+        if (text.compare(idx, pattern.size(), pattern) < 0) {
             left = mid + 1;
         } else {
-            right = mid - 1;
+            right = mid;
         }
     }
     return left;
@@ -57,14 +60,16 @@ std::size_t SuffixArray::lowerBound(const std::string& pattern) const {
 
 // Binary search to find the upper bound (first index where the pattern doesn't match)
 std::size_t SuffixArray::upperBound(const std::string& pattern) const {
-    std::size_t left = 0, right = text.size() - 1;
-    while (left <= right) {
+    std::size_t left = 0, right = text.size();
+    while (left < right) {
         std::size_t mid = left + (right - left) / 2;
-        std::string suffix = text.substr(suffixArray[mid]);
-        if (suffix.compare(0, pattern.size(), pattern) <= 0) {
+        std::size_t idx = suffixArray[mid];
+
+        // Compare the pattern with the suffix starting at suffixArray[mid]
+        if (text.compare(idx, pattern.size(), pattern) <= 0) {
             left = mid + 1;
         } else {
-            right = mid - 1;
+            right = mid;
         }
     }
     return left;
@@ -72,6 +77,9 @@ std::size_t SuffixArray::upperBound(const std::string& pattern) const {
 
 // Search method for finding the pattern in the suffix array
 std::vector<std::size_t> SuffixArray::search(const std::string& pattern) const {
+    if (text.empty() || pattern.empty() || pattern.size() > text.size()) {
+        return {};
+    }
     std::size_t lb = lowerBound(pattern);
     std::size_t ub = upperBound(pattern);
     std::vector<std::size_t> result;
