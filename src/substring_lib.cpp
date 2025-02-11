@@ -4,6 +4,7 @@
 
 #include "boyer_moore.h"
 #include "kmp.h"
+#include "rabin_karp.h"
 #include "suffix_array.h"
 #include "z_algorithm.h"
 
@@ -17,6 +18,8 @@ std::vector<std::size_t> search_pattern(const std::string &text, const std::stri
             return ZAlgorithm(pattern).search(text);
         case AlgorithmType::SUFFIX_ARRAY:
             return SuffixArray(pattern).search(text);
+        case AlgorithmType::RABIN_KARP:
+            return RabinKarp(pattern).search(text);
         default:
             throw std::invalid_argument("Unknown algorithm type");
     }
