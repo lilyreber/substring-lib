@@ -1,4 +1,5 @@
 #include "boyer_moore.h"
+
 #include <iostream>
 
 // Constructor. Save pattern and shiftTable

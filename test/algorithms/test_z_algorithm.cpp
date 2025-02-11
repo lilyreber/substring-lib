@@ -4,7 +4,6 @@
 #include "doctest.h"
 #include "substring_lib.h"
 
-
 // check search
 TEST_CASE("Empty text and empty pattern") {
     auto result = search_pattern("", "", AlgorithmType::Z_ALGORITHM);
