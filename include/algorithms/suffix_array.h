@@ -7,18 +7,18 @@
 // Class for substring searching using the Suffix Array and binary search
 
 class SuffixArray {
-public:
+   public:
     explicit SuffixArray(const std::string &text);
     std::vector<int> search(const std::string &pattern) const;
 
-private:
+   private:
     std::vector<int> buildSuffixArray(const std::string &text) const;
 
     int lowerBound(const std::string &pattern) const;
     int upperBound(const std::string &pattern) const;
 
     const std::string text;
-    std::vector<int> suffixArray; 
+    std::vector<int> suffixArray;
 };
 
 #endif  // SUBSTRING_LIB_SUFFIX_ARRAY_H
