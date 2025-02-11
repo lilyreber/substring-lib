@@ -9,16 +9,16 @@
 class SuffixArray {
    public:
     explicit SuffixArray(const std::string &text);
-    std::vector<int> search(const std::string &pattern) const;
+    std::vector<std::size_t> search(const std::string &pattern) const;
 
    private:
-    std::vector<int> buildSuffixArray(const std::string &text) const;
+    std::vector<std::size_t> buildSuffixArray(const std::string &text) const;
 
-    int lowerBound(const std::string &pattern) const;
-    int upperBound(const std::string &pattern) const;
+    std::size_t lowerBound(const std::string &pattern) const;
+    std::size_t upperBound(const std::string &pattern) const;
 
     const std::string text;
-    std::vector<int> suffixArray;
+    std::vector<std::size_t> suffixArray;
 };
 
 #endif  // SUBSTRING_LIB_SUFFIX_ARRAY_H
