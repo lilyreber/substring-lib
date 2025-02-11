@@ -2,7 +2,7 @@
 
 #include <stdexcept>
 
-#include "boyer-moore.h"
+#include "boyer_moore.h"
 #include "kmp.h"
 #include "suffix_array.h"
 #include "z_algorithm.h"

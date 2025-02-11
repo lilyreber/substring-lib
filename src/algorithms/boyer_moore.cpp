@@ -1,10 +1,14 @@
-#include "boyer-moore.h"
+#include "boyer_moore.h"
+#include <iostream>
 
 // Constructor. Save pattern and shiftTable
 // assumption that the alphabet contains no more than 256 symbols
 BoyerMoore::BoyerMoore(const std::string &pattern) : pattern(pattern) {
-    shiftTable = std::vector(256, pattern.size());
-    for (int i = 0; i < pattern.size() - 1; i++) {
+    shiftTable = std::vector<std::size_t>(256, pattern.size());
+    if (pattern.empty()) {
+        return;
+    }
+    for (std::size_t i = 0; i < pattern.size() - 1; i++) {
         shiftTable[pattern[i]] = pattern.size() - 1 - i;
     }
 }
@@ -14,7 +18,8 @@ std::vector<std::size_t> BoyerMoore::search(const std::string &text) const {
     auto n = text.size();
     auto m = pattern.size();
 
-    if (m == 0) {
+    // check for empty pattern and pattern bigger than text
+    if (m == 0 || n < m) {
         return result;
     }
 

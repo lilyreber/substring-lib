@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_library(substring_lib STATIC
         src/substring_lib.cpp
         src/algorithms/kmp.cpp
-        src/algorithms/boyer-moore.cpp
+        src/algorithms/boyer_moore.cpp
         src/algorithms/z_algorithm.cpp
         src/algorithms/suffix_array.cpp
 )
@@ -26,6 +26,7 @@ target_link_libraries(substring_experimental PRIVATE
 set(TEST_SOURCES
     test/algorithms/test_kmp.cpp
     test/algorithms/test_z_algorithm.cpp
+    test/algorithms/test_boyer_moore.cpp
 )
 
 foreach(TEST_SOURCE ${TEST_SOURCES})
