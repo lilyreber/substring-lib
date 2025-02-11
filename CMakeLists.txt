@@ -10,6 +10,7 @@ add_library(substring_lib STATIC
         src/algorithms/kmp.cpp
         src/algorithms/boyer-moore.cpp
         src/algorithms/z_algorithm.cpp
+        src/algorithms/suffix_array.cpp
 )
 target_include_directories(substring_lib PUBLIC
         include/algorithms
