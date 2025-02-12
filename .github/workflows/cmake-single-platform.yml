@@ -49,8 +49,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: clang-tidy-12 --version
-      - run: clang-tidy-12 $(find . -path '*/CMakeFiles/*' -prune -or \( -iname '*.cpp' -or -iname '*.h' -and -not -iname 'doctest.h' \) -print)
+      - run: clang-tidy --version
+      - run: clang-tidy $(find . -path '*/CMakeFiles/*' -prune -or \( -iname '*.cpp' -or -iname '*.h' -and -not -iname 'doctest.h' \) -print)
   
 
 
