@@ -6,7 +6,7 @@ purposes
 
 ## Algorithms
 
-Algorithms implemented in the substring-lib include the following. For more information on individual algorithms please take a look at the [docs](docs/Algo-description.pdf).
+Algorithms implemented in the substring-lib include the following. For more information on individual algorithms please take a look at the [docs](lib/docs/Algo-description.pdf).
 1. Knuth-Morris-Pratt (KMP) Algorithm
 2. Boyer-Moore Algorithm
 3. Rabin-Karp Algorithm
@@ -75,7 +75,7 @@ You can now use Graaf in your source files:
 #include <substring_lib.h>
 ```
 
-Для больших деталей перейдите к [инструкции по установке](include/README.md)
+Для больших деталей перейдите к [инструкции по установке](lib/include/README.md)
 
 ## CI/CD
 ![Build Status](https://github.com/lilyreber/substring-lib/actions/workflows/cmake-single-platform.yml/badge.svg)
