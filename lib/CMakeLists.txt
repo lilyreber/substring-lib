@@ -42,5 +42,3 @@ foreach (TEST_SOURCE ${TEST_SOURCES})
             COMMAND $<TARGET_FILE:${TEST_NAME}>
     )
 endforeach ()
-
-enable_testing()
