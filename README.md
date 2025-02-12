@@ -75,7 +75,7 @@ You can now use Graaf in your source files:
 #include <substring_lib.h>
 ```
 
-Для больших деталей перейдите к [инструкции по установке](include/README.md)
+Для больших деталей перейдите к [инструкции по установке](lib/include/README.md)
 
 ## CI/CD
 ![Build Status](https://github.com/lilyreber/substring-lib/actions/workflows/cmake-single-platform.yml/badge.svg)
