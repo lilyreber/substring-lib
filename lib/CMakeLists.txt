@@ -9,16 +9,18 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_library(substring_lib STATIC
         src/substring_lib.cpp
         src/algorithms/kmp.cpp
-        )
+)
 target_include_directories(substring_lib PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include/algorithms
-        ${CMAKE_CURRENT_SOURCE_DIR}/include)
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
 
 
 # add tests
 set(TEST_SOURCES
         test/algorithms/test_kmp.cpp
-        )
+        test/algorithms/integration_tests.cpp
+)
 
 foreach (TEST_SOURCE ${TEST_SOURCES})
     get_filename_component(TEST_NAME ${TEST_SOURCE} NAME_WE)
