@@ -1,0 +1,13 @@
+---
+Checks: >
+    -*,
+    clang-analyzer-*,
+    modernize-*,
+    performance-*,
+    readability-*
+WarningsAsErrors: '*'
+HeaderFilterRegex: '.*'
+ExtraArgs:
+    - "-std=c++17"
+ExtraArgsBefore:
+    - "-xc++"

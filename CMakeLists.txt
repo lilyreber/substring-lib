@@ -32,6 +32,11 @@ set(TEST_SOURCES
     test/algorithms/test_suffix_array.cpp
 )
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address,undefined -g")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsanitize=address,undefined -g")
+
+set(CMAKE_CXX_CLANG_TIDY "clang-tidy;-checks=*")
+
 foreach(TEST_SOURCE ${TEST_SOURCES})
     get_filename_component(TEST_NAME ${TEST_SOURCE} NAME_WE)
     add_executable(${TEST_NAME}
