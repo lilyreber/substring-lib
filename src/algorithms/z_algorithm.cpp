@@ -11,10 +11,15 @@ std::vector<std::size_t> ZAlgorithm::computeZFunction(std::string &s) const {
     for (std::size_t i = 1; i < s.size(); i++) {
         // if the symbol has already been encountered
         // initialise result[i - l] but no further than the right pointer
-        if (i <= right) result[i] = std::min(right - i + 1, result[i - left]);
+        if (i <= right) {
+            result[i] = std::min(right - i + 1, result[i - left]);
+        }
 
-        // each successful increase of result[i] will shift the z-block by one unit
-        while (i + result[i] < s.size() && s[result[i]] == s[i + result[i]]) result[i]++;
+        // each successful increase of result[i] will shift the z-block by one
+        // unit
+        while (i + result[i] < s.size() && s[result[i]] == s[i + result[i]]) {
+            result[i]++;
+        }
 
         // check if we are to the right of the current z-block
         if (i + result[i] - 1 > right) {
@@ -37,8 +42,8 @@ std::vector<std::size_t> ZAlgorithm::search(const std::string &text) const {
     auto zFunction = computeZFunction(s);
 
     for (int i = m + 1; i < s.size(); ++i) {
-        // in positions where the value of the zFunction is equal to |pattern| = m,
-        // the substring that matches the pattern starts.
+        // in positions where the value of the zFunction is equal to |pattern| =
+        // m, the substring that matches the pattern starts.
         if (zFunction[i] == m) {
             result.push_back(i - m - 1);
         }
