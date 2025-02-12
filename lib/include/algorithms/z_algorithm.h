@@ -10,10 +10,10 @@
 class ZAlgorithm {
    public:
     explicit ZAlgorithm(const std::string &pattern);
-    std::vector<std::size_t> search(const std::string &text) const;
+    [[nodiscard]] std::vector<std::size_t> search(const std::string &text) const;
 
    private:
-    std::vector<std::size_t> computeZFunction(std::string &text) const;
+    [[nodiscard]] std::vector<std::size_t> computeZFunction(std::string &text) const;
 
     const std::string pattern;
 };

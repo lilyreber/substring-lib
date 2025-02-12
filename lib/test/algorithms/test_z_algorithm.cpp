@@ -62,7 +62,7 @@ TEST_CASE("Long text and short pattern") {
         text += "ab";
     }
     auto result = search_pattern(text, "ab", AlgorithmType::Z_ALGORITHM);
-    std::vector<std::size_t> expected;
+    auto expected = std::vector<std::size_t>();
     for (std::size_t i = 0; i < text.size(); i += 2) {
         expected.push_back(i);
     }
