@@ -83,7 +83,11 @@ std::vector<std::size_t> SuffixArray::search(const std::string& pattern) const {
 
     // Collect the matching positions in the suffix array
     for (std::size_t i = lb; i < ub; i++) {
-        result.push_back(suffixArray[i]);
+        std::size_t idx = suffixArray[i];
+        // Ensure that the collected suffix indeed matches the pattern
+        if (text.compare(idx, pattern.size(), pattern) == 0) {
+            result.push_back(idx);
+        }
     }
     return result;
 }
