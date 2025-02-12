@@ -17,7 +17,7 @@ std::vector<std::size_t> search_pattern(const std::string &text, const std::stri
         case AlgorithmType::Z_ALGORITHM:
             return ZAlgorithm(pattern).search(text);
         case AlgorithmType::SUFFIX_ARRAY:
-            return SuffixArray(pattern).search(text);
+            return SuffixArray(text).search(pattern);
         case AlgorithmType::RABIN_KARP:
             return RabinKarp(pattern).search(text);
         default:

@@ -1,11 +1,10 @@
 #include "suffix_array.h"
+
 #include <algorithm>
 #include <iostream>
 
 // Constructor to initialize the suffix array
-SuffixArray::SuffixArray(const std::string& text) : text(text) { 
-    suffixArray = buildSuffixArray(text); 
-}
+SuffixArray::SuffixArray(const std::string& text) : text(text) { suffixArray = buildSuffixArray(text); }
 
 // Function to build the suffix array using a doubling technique and sorting
 std::vector<std::size_t> SuffixArray::buildSuffixArray(const std::string& text) const {
@@ -24,7 +23,7 @@ std::vector<std::size_t> SuffixArray::buildSuffixArray(const std::string& text) 
             if (rank[i] != rank[j]) return rank[i] < rank[j];
             std::size_t ri = (i + len < n) ? rank[i + len] : -1;
             std::size_t rj = (j + len < n) ? rank[j + len] : -1;
-            return ri >= rj;
+            return ri < rj;
         };
 
         // Use stable_sort to maintain the correct order of suffixes
@@ -47,7 +46,6 @@ std::size_t SuffixArray::lowerBound(const std::string& pattern) const {
     while (left < right) {
         std::size_t mid = left + (right - left) / 2;
         std::size_t idx = suffixArray[mid];
-
         // Compare the pattern with the suffix starting at suffixArray[mid]
         if (text.compare(idx, pattern.size(), pattern) < 0) {
             left = mid + 1;
@@ -64,7 +62,6 @@ std::size_t SuffixArray::upperBound(const std::string& pattern) const {
     while (left < right) {
         std::size_t mid = left + (right - left) / 2;
         std::size_t idx = suffixArray[mid];
-
         // Compare the pattern with the suffix starting at suffixArray[mid]
         if (text.compare(idx, pattern.size(), pattern) <= 0) {
             left = mid + 1;
