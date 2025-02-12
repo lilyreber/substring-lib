@@ -10,16 +10,16 @@ FetchContent_MakeAvailable(google_benchmark)
 
 
 set(BENCHMARK_SOURCES
-        benchmark_z_algorithm.cpp
-        benchmark_kmp.cpp
-        benchmark_boyer_moore.cpp
-        benchmark_rabin_karp.cpp
-        benchmark_suffix_array.cpp)
+        benchmark_z_algorithm
+        benchmark_kmp
+        benchmark_boyer_moore
+        benchmark_rabin_karp
+        benchmark_suffix_array)
 
 foreach (BENCHMARK_SOURCE ${BENCHMARK_SOURCES})
     add_executable(env_${BENCHMARK_SOURCE}
             benchmark.cpp
-            algorithms/${BENCHMARK_SOURCE})
+            algorithms/${BENCHMARK_SOURCE}.cpp)
     target_link_libraries(env_${BENCHMARK_SOURCE} PRIVATE
             substring_lib
             benchmark
