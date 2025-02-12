@@ -17,7 +17,7 @@ std::vector<std::size_t> RabinKarp::search(const std::string& text) const {
     std::vector<std::size_t> occurrences;
     int n = text.length();
     int m = pattern.length();
-    if (n < m) return occurrences;
+    if (n < m || m == 0) return occurrences;
 
     long long prime = 101;  // Prime number to hash
     long long base = 256;   // Hash Basis
