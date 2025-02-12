@@ -50,13 +50,13 @@ jobs:
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
       - name: Run Benchmark Boyer-Moore
-        run: ./build/env_benchmark_boyer_moore | tee docs/benchmark_boyer_moore_results.txt
+        run: ./build/env_benchmark_boyer_moore > benchmark_boyer_moore_results.txt
 
-      - name: Upload Benchmark Results
+      - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: benchmark_boyer_moore_results.txt
-          path: docs/benchmark_boyer_moore_results.txt
+          name: my-artifact
+          path: benchmark_boyer_moore_results.txt
 
   clang-format:
     runs-on: ubuntu-latest
