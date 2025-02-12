@@ -1,0 +1,136 @@
+{
+  "context": {
+    "date": "2025-02-12T22:40:46+03:00",
+    "host_name": "Ari.local",
+    "executable": "./cmake-build-debug/experimental/env_benchmark_boyer_moore",
+    "num_cpus": 8,
+    "mhz_per_cpu": 24,
+    "cpu_scaling_enabled": false,
+    "caches": [
+      {
+        "type": "Data",
+        "level": 1,
+        "size": 65536,
+        "num_sharing": 0
+      },
+      {
+        "type": "Instruction",
+        "level": 1,
+        "size": 131072,
+        "num_sharing": 0
+      },
+      {
+        "type": "Unified",
+        "level": 2,
+        "size": 4194304,
+        "num_sharing": 1
+      }
+    ],
+    "load_avg": [3.6792,3.49365,3.08447],
+    "library_build_type": "debug"
+  },
+  "benchmarks": [
+    {
+      "name": "BM_Boyer_Moore_Cold",
+      "family_index": 0,
+      "per_family_instance_index": 0,
+      "run_name": "BM_Boyer_Moore_Cold",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 52900,
+      "real_time": 1.3295934158808681e+04,
+      "cpu_time": 1.3253837429111527e+04,
+      "time_unit": "ns"
+    },
+    {
+      "name": "BM_Boyer_Moore_LargeText_Cold",
+      "family_index": 1,
+      "per_family_instance_index": 0,
+      "run_name": "BM_Boyer_Moore_LargeText_Cold",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 2.0284517500549555e+09,
+      "cpu_time": 2.0201390000000002e+09,
+      "time_unit": "ns"
+    },
+    {
+      "name": "BM_Boyer_Moore_Hot",
+      "family_index": 2,
+      "per_family_instance_index": 0,
+      "run_name": "BM_Boyer_Moore_Hot",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 4.3668987911660223e+09,
+      "cpu_time": 4.3403700000000000e+09,
+      "time_unit": "ns"
+    },
+    {
+      "name": "BM_Boyer_Moore_Per_MB/1048576",
+      "family_index": 3,
+      "per_family_instance_index": 0,
+      "run_name": "BM_Boyer_Moore_Per_MB/1048576",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 1.9381983750499785e+09,
+      "cpu_time": 1.9282159999999974e+09,
+      "time_unit": "ns",
+      "bytes_per_second": 5.4380629556024924e+05
+    },
+    {
+      "name": "BM_Boyer_Moore_Per_MB/2097152",
+      "family_index": 3,
+      "per_family_instance_index": 1,
+      "run_name": "BM_Boyer_Moore_Per_MB/2097152",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 1.9777516669128089e+09,
+      "cpu_time": 1.9671070000000021e+09,
+      "time_unit": "ns",
+      "bytes_per_second": 1.0661097744047465e+06
+    },
+    {
+      "name": "BM_Boyer_Moore_Per_MB/16777216",
+      "family_index": 3,
+      "per_family_instance_index": 2,
+      "run_name": "BM_Boyer_Moore_Per_MB/16777216",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 2.2706817500293255e+09,
+      "cpu_time": 2.2539710000000000e+09,
+      "time_unit": "ns",
+      "bytes_per_second": 7.4434036640222967e+06
+    },
+    {
+      "name": "BM_Boyer_Moore_Per_MB/104857600",
+      "family_index": 3,
+      "per_family_instance_index": 3,
+      "run_name": "BM_Boyer_Moore_Per_MB/104857600",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 4.0840219999663534e+09,
+      "cpu_time": 4.0621600000000024e+09,
+      "time_unit": "ns",
+      "bytes_per_second": 2.5813261909919832e+07
+    }
+  ]
+}

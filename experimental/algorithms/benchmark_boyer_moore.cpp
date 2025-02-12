@@ -53,7 +53,7 @@ static void BM_Boyer_Moore_Per_MB(benchmark::State &state) {
 
 BENCHMARK(BM_Boyer_Moore_Per_MB)->Range(1024 * 1024, 100 * 1024 * 1024);
 //
-//BENCHMARK(BM_Boyer_Moore_Cold_Bin_Str);
-//BENCHMARK(BM_Boyer_Moore_LargeText_Cold_Bin_Str);
-//BENCHMARK(BM_Boyer_Moore_Hot_Bin_Str);
-//BENCHMARK(BM_Boyer_Moore_Per_MB_Bin_Str)->Range(1024 * 1024, 100 * 1024 * 1024);
+// BENCHMARK(BM_Boyer_Moore_Cold_Bin_Str);
+// BENCHMARK(BM_Boyer_Moore_LargeText_Cold_Bin_Str);
+// BENCHMARK(BM_Boyer_Moore_Hot_Bin_Str);
+// BENCHMARK(BM_Boyer_Moore_Per_MB_Bin_Str)->Range(1024 * 1024, 100 * 1024 * 1024);
