@@ -1,7 +1,6 @@
 #include <algorithm>
 #include <string>
 #include <vector>
-#include <iostream>
 
 #include "doctest.h"
 #include "substring_lib.h"
@@ -12,13 +11,12 @@
 
 TEST_CASE("Suffix Array unit tests") {
     SUBCASE("Constructor test") {
-    // anana ana a banana nana na
-    //   1    3  5    0    2   4
+        // anana ana a banana nana na
+        //   1    3  5    0    2   4
 
-    auto suffixArray = SuffixArray("banana");
-    std::cout << '\n';
-    auto expected = std::vector<std::size_t>{1, 3, 5, 0, 2, 4};
-    CHECK_EQ(expected, suffixArray.suffixArray);
+        auto suffixArray = SuffixArray("banana");
+        auto expected = std::vector<std::size_t>{1, 3, 5, 0, 2, 4};
+        CHECK_EQ(expected, suffixArray.suffixArray);
     }
 
     SUBCASE("LowerBound test") {
@@ -85,5 +83,4 @@ TEST_CASE("Suffix Array unit tests") {
         CHECK_EQ(suffixArray.search("a"), expected);
         CHECK_EQ(suffixArray.search("b"), std::vector<std::size_t>{10000});
     }
-
 }
