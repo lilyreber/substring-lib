@@ -25,6 +25,7 @@ set(TEST_SOURCES
         test/algorithms/test_boyer_moore.cpp
         test/algorithms/test_rabin_karp.cpp
         test/algorithms/test_suffix_array.cpp
+        test/algorithms/integration_tests.cpp
         )
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address,undefined -g")
