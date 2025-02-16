@@ -24,7 +24,7 @@ std::vector<std::size_t> KMP::search(const std::string &text) const {
     auto m = pattern.size();
     std::size_t j = 0;
 
-//  case with empty pattern
+    //  case with empty pattern
     if (m == 0) {
         return result;
     }
