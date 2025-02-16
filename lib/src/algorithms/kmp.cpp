@@ -1,8 +1,8 @@
 #include "kmp.h"
 
-KMP::KMP(const std::string &pattern) : pattern(pattern) { computeLPS(); }
+KMP::KMP(const std::string &pattern) : pattern(pattern) { computeLongestPrefixSuffixArray(); }
 
-void KMP::computeLPS() {
+void KMP::computeLongestPrefixSuffixArray() {
     auto m = pattern.size();
     lps.resize(m, 0);
     std::size_t j = 0;

@@ -4,6 +4,7 @@
 #include "doctest.h"
 #include "substring_lib.h"
 
+// tests for search function of any algorithm
 void run_tests_for_algorithm(AlgorithmType algorithm);
 
 TEST_CASE("Test search_pattern for all algorithms") {

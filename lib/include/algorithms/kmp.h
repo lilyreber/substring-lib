@@ -10,7 +10,7 @@ class KMP {
     std::vector<std::size_t> search(const std::string &text) const;
 
    private:
-    void computeLPS();
+    void computeLongestPrefixSuffixArray();
 
     std::string pattern;
     std::vector<std::size_t> lps;
