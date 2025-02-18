@@ -7,7 +7,7 @@
 #define private public
 #include "suffix_array.h"
 
-// unit tests for suffix array
+// unit tests for Suffix Array Algorithm
 
 TEST_CASE("Suffix Array unit tests") {
     SUBCASE("Constructor test") {

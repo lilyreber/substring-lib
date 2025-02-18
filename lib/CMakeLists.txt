@@ -11,6 +11,7 @@ add_library(substring_lib STATIC
         src/algorithms/z_algorithm.cpp
         src/algorithms/suffix_array.cpp
         src/algorithms/rabin_karp.cpp
+        src/algorithms/not_so_naive.cpp
         )
 target_include_directories(substring_lib PUBLIC
         include/algorithms
@@ -22,6 +23,7 @@ set(TEST_SOURCES
         test/algorithms/test_boyer_moore.cpp
         test/algorithms/test_rabin_karp.cpp
         test/algorithms/test_suffix_array.cpp
+        test/algorithms/test_not_so_naive.cpp
         test/algorithms/integration_tests.cpp
         )
 
