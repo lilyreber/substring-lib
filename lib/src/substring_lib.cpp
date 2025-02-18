@@ -7,6 +7,7 @@
 #include "rabin_karp.h"
 #include "suffix_array.h"
 #include "z_algorithm.h"
+#include "not_so_naive.h"
 
 std::vector<std::size_t> search_pattern(const std::string &text, const std::string &pattern, AlgorithmType type) {
     switch (type) {
@@ -20,6 +21,8 @@ std::vector<std::size_t> search_pattern(const std::string &text, const std::stri
             return SuffixArray(text).search(pattern);
         case AlgorithmType::RABIN_KARP:
             return RabinKarp(pattern).search(text);
+        case AlgorithmType::NOT_SO_NAIVE:
+            return NotSoNaive(text).search(pattern);
         default:
             throw std::invalid_argument("Unknown algorithm type");
     }

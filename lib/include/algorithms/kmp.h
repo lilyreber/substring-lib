@@ -1,5 +1,5 @@
-#ifndef KMP_H
-#define KMP_H
+#ifndef SUBSTRING_LIB_KMP_H
+#define SUBSTRING_LIB_KMP_H
 
 #include <string>
 #include <vector>
@@ -19,4 +19,4 @@ class KMP {
     std::vector<std::size_t> longestPrefixSuffix;
 };
 
-#endif  // KMP_H
+#endif  // SUBSTRING_LIB_KMP_H

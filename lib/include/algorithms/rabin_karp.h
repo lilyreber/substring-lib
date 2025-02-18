@@ -1,5 +1,5 @@
-#ifndef RABINKARP_H
-#define RABINKARP_H
+#ifndef SUBSTRING_LIB_RABINKARP_H
+#define SUBSTRING_LIB_RABINKARP_H
 
 #include <string>
 #include <vector>
@@ -17,4 +17,4 @@ class RabinKarp {
     const std::string pattern;
 };
 
-#endif  // RABINKARP
+#endif  // SUBSTRING_LIB_RABIN_KARP_H
