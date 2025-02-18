@@ -4,10 +4,10 @@
 
 #include "boyer_moore.h"
 #include "kmp.h"
+#include "not_so_naive.h"
 #include "rabin_karp.h"
 #include "suffix_array.h"
 #include "z_algorithm.h"
-#include "not_so_naive.h"
 
 std::vector<std::size_t> search_pattern(const std::string &text, const std::string &pattern, AlgorithmType type) {
     switch (type) {

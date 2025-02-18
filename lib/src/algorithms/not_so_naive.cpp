@@ -1,9 +1,10 @@
+#include "not_so_naive.h"
+
 #include <iostream>
 #include <string>
 #include <vector>
-#include "not_so_naive.h"
 
-NotSoNaive::NotSoNaive(const std::string &text) : text(text){}
+NotSoNaive::NotSoNaive(const std::string &text) : text(text) {}
 
 // Naive search if pattern size is 1
 std::vector<std::size_t> NotSoNaive::naiveSearch(const std::string &pattern) const {
@@ -18,7 +19,6 @@ std::vector<std::size_t> NotSoNaive::naiveSearch(const std::string &pattern) con
     }
     return result;
 }
-
 
 std::vector<std::size_t> NotSoNaive::search(const std::string &pattern) const {
     int n = text.size();

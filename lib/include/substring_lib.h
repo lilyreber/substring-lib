@@ -5,8 +5,14 @@
 #include <vector>
 
 <<<<<<< Updated upstream
-// store algorithm types
-enum class AlgorithmType { BOYER_MOORE, KMP, RABIN_KARP, SUFFIX_ARRAY, Z_ALGORITHM };
+    // store algorithm types
+    enum class AlgorithmType {
+        BOYER_MOORE,
+        KMP,
+        RABIN_KARP,
+        SUFFIX_ARRAY,
+        Z_ALGORITHM
+    };
 =======
 enum class AlgorithmType { KMP, BOYER_MOORE, Z_ALGORITHM, SUFFIX_ARRAY, RABIN_KARP, NOT_SO_NAIVE };
 >>>>>>> Stashed changes
