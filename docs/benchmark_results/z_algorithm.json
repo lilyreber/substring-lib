@@ -1,0 +1,66 @@
+{
+  "context": {
+    "date": "2025-02-12T22:44:21+03:00",
+    "host_name": "Ari.local",
+    "executable": "./cmake-build-debug/experimental/env_benchmark_z_algorithm",
+    "num_cpus": 8,
+    "mhz_per_cpu": 24,
+    "cpu_scaling_enabled": false,
+    "caches": [
+      {
+        "type": "Data",
+        "level": 1,
+        "size": 65536,
+        "num_sharing": 0
+      },
+      {
+        "type": "Instruction",
+        "level": 1,
+        "size": 131072,
+        "num_sharing": 0
+      },
+      {
+        "type": "Unified",
+        "level": 2,
+        "size": 4194304,
+        "num_sharing": 1
+      }
+    ],
+    "load_avg": [
+      3.16943,
+      3.4624,
+      3.1665
+    ],
+    "library_build_type": "debug"
+  },
+  "benchmarks": [
+    {
+      "name": "BM_Z_Algorithm_Cold",
+      "family_index": 0,
+      "per_family_instance_index": 0,
+      "run_name": "BM_Z_Algorithm_Cold",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 53470,
+      "real_time": 1.3175316362052861e+04,
+      "cpu_time": 1.3149298672152605e+04,
+      "time_unit": "ns"
+    },
+    {
+      "name": "BM_Z_Algorithm_LargeText_Cold",
+      "family_index": 1,
+      "per_family_instance_index": 0,
+      "run_name": "BM_Z_Algorithm_LargeText_Cold",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 2.4539346333127468e+10,
+      "cpu_time": 2.4432954000000004e+10,
+      "time_unit": "ns"
+    }
+  ]
+}

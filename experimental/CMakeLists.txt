@@ -1,11 +1,28 @@
-cmake_minimum_required(VERSION 3.23)
-project(experimental)
+# The benchmarks are based on the google benchmark framework
+include(FetchContent)
+FetchContent_Declare(
+        google_benchmark
+        GIT_REPOSITORY https://github.com/google/benchmark.git
+        GIT_TAG v1.8.2
+)
+set(BENCHMARK_ENABLE_TESTING OFF) # Disable building the tests
+FetchContent_MakeAvailable(google_benchmark)
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-add_executable(experimental_env benchmark.cpp)
+set(BENCHMARK_SOURCES
+        benchmark_z_algorithm
+        benchmark_kmp
+        benchmark_boyer_moore
+        benchmark_rabin_karp
+        benchmark_suffix_array)
 
-# Connect library
-target_link_libraries(experimental_env PRIVATE substring_lib)
-target_include_directories(experimental_env PRIVATE ${CMAKE_SOURCE_DIR}/lib/include)
+foreach (BENCHMARK_SOURCE ${BENCHMARK_SOURCES})
+    add_executable(env_${BENCHMARK_SOURCE}
+            benchmark.cpp
+            algorithms/${BENCHMARK_SOURCE}.cpp)
+    target_link_libraries(env_${BENCHMARK_SOURCE} PRIVATE
+            substring_lib
+            benchmark
+            )
+    target_include_directories(env_${BENCHMARK_SOURCE} PRIVATE ${CMAKE_SOURCE_DIR}/lib/include)
+endforeach ()

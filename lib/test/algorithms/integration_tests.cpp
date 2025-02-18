@@ -9,6 +9,10 @@ void run_tests_for_algorithm(AlgorithmType algorithm);
 
 TEST_CASE("Test search_pattern for all algorithms") {
     SUBCASE("Knuth-Morris-Pratt algorithm") { run_tests_for_algorithm(AlgorithmType::KMP); }
+    SUBCASE("Boyer-Moore algorithm") { run_tests_for_algorithm(AlgorithmType::BOYER_MOORE); }
+    SUBCASE("Rabin-Karp algorithm") { run_tests_for_algorithm(AlgorithmType::RABIN_KARP); }
+    SUBCASE("Suffix Array algorithm") { run_tests_for_algorithm(AlgorithmType::SUFFIX_ARRAY); }
+    SUBCASE("Z algorithm") { run_tests_for_algorithm(AlgorithmType::Z_ALGORITHM); }
 }
 
 void run_tests_for_algorithm(AlgorithmType algorithm) {
