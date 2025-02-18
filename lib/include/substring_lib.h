@@ -5,13 +5,7 @@
 #include <vector>
 
 // store algorithm types
-enum class AlgorithmType {
-    BOYER_MOORE,
-    KMP,
-    RABIN_KARP,
-    SUFFIX_ARRAY,
-    Z_ALGORITHM
-};
+enum class AlgorithmType { BOYER_MOORE, KMP, RABIN_KARP, SUFFIX_ARRAY, Z_ALGORITHM };
 
 // common, public for library function
 std::vector<std::size_t> search_pattern(const std::string &text, const std::string &pattern, AlgorithmType type);
