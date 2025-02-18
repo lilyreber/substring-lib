@@ -16,7 +16,7 @@ class KMP {
     void computeLongestPrefixSuffixArray();
 
     std::string pattern;
-    std::vector<std::size_t> lps;
+    std::vector<std::size_t> longestPrefixSuffix;
 };
 
 #endif  // KMP_H

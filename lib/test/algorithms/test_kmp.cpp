@@ -26,12 +26,12 @@ TEST_CASE("KMP unit tests") {
         //        ^a
         KMP kmp("a");
         std::vector<std::size_t> expected = {0};
-        CHECK_EQ(expected, kmp.lps);
+        CHECK_EQ(expected, kmp.longestPrefixSuffix);
     }
 
     SUBCASE("Compute Longest Prefix SuffixArray empty test") {
         KMP kmp("");
-        CHECK_FALSE(!kmp.lps.empty());
+        CHECK_FALSE(!kmp.longestPrefixSuffix.empty());
     }
 
     SUBCASE("Compute Longest Prefix SuffixArray easy test") {
@@ -39,7 +39,7 @@ TEST_CASE("KMP unit tests") {
         //          ^a ^ab
         KMP kmp("abab");
         std::vector<std::size_t> expected = {0, 0, 1, 2};
-        CHECK_EQ(expected, kmp.lps);
+        CHECK_EQ(expected, kmp.longestPrefixSuffix);
     }
 
     SUBCASE("Constructor repeat test") {
@@ -47,7 +47,7 @@ TEST_CASE("KMP unit tests") {
         //         ^a ^aa ^aaa
         KMP kmp("aaaa");
         std::vector<std::size_t> expected = {0, 1, 2, 3};
-        CHECK_EQ(expected, kmp.lps);
+        CHECK_EQ(expected, kmp.longestPrefixSuffix);
     }
 
     SUBCASE("Constructor repeat not so easy test") {
@@ -55,7 +55,7 @@ TEST_CASE("KMP unit tests") {
         //         ^a  ^a ^aa ^aab ^aaba ^aabaa ^aa
         KMP kmp("aabaabaaa");
         std::vector<std::size_t> expected = {0, 1, 0, 1, 2, 3, 4, 5, 2};
-        CHECK_EQ(expected, kmp.lps);
+        CHECK_EQ(expected, kmp.longestPrefixSuffix);
     }
 
     SUBCASE("Compute Longest Prefix SuffixArray long test") {
@@ -64,6 +64,6 @@ TEST_CASE("KMP unit tests") {
         for (int i = 0; i < expected.size(); ++i) {
             expected[i] = i;
         }
-        CHECK_EQ(expected, kmp.lps);
+        CHECK_EQ(expected, kmp.longestPrefixSuffix);
     }
 }
