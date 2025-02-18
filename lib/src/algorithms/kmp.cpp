@@ -1,8 +1,8 @@
 #include "kmp.h"
 
-KMP::KMP(const std::string &pattern) : pattern(pattern) { computeLPS(); }
+KMP::KMP(const std::string &pattern) : pattern(pattern) { computeLongestPrefixSuffixArray(); }
 
-void KMP::computeLPS() {
+void KMP::computeLongestPrefixSuffixArray() {
     auto m = pattern.size();
     lps.resize(m, 0);
     std::size_t j = 0;
@@ -24,6 +24,7 @@ std::vector<std::size_t> KMP::search(const std::string &text) const {
     auto m = pattern.size();
     std::size_t j = 0;
 
+    //  case with empty pattern
     if (m == 0) {
         return result;
     }
