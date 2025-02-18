@@ -1,6 +1,9 @@
 # substring-lib
-This C++ Library provides tools for solving common problems, 
-such as substring search and pattern matching for different 
+![Build Status](https://github.com/lilyreber/substring-lib/actions/workflows/cmake-single-platform.yml/badge.svg)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+
+This C++ Library provides tools for solving common problems,
+such as substring search and pattern matching for different
 purposes
 
 
@@ -20,7 +23,7 @@ Algorithms implemented in the substring-lib include the following. For more info
 
 ## Build
 
-### For Linux 
+### For Linux
 
 1. **Build the project:**
 ```sh
@@ -68,7 +71,7 @@ Algorithms implemented in the substring-lib include the following. For more info
 
 ## Installation Header-only
 Substring-lib can be included as a header-only library.
-Download the `include` directory from our repository and add it to your include path. 
+Download the `include` directory from our repository and add it to your include path.
 
 You can now use Graaf in your source files:
 ```c++
@@ -76,9 +79,6 @@ You can now use Graaf in your source files:
 ```
 
 Для больших деталей перейдите к [инструкции по установке](lib/include/README.md)
-
-## CI/CD
-![Build Status](https://github.com/lilyreber/substring-lib/actions/workflows/cmake-single-platform.yml/badge.svg)
 
 ## Contributing
 
