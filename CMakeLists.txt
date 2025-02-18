@@ -9,5 +9,3 @@ add_link_options(-fsanitize=address,undefined)
 
 add_subdirectory(lib)
 add_subdirectory(experimental)
-
-enable_testing()

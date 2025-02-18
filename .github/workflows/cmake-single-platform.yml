@@ -30,7 +30,7 @@ jobs:
         run: cmake --build .
 
       - name: Test
-        working-directory: ${{github.workspace}}/build
+        working-directory: ${{github.workspace}}/build/lib
         run: ctest
 
   clang-format:
