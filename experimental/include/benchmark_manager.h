@@ -8,8 +8,11 @@
 #ifdef _WIN32
 #include <psapi.h>
 #include <windows.h>
-#else
+#elif __APPLE__
 #include <mach/mach.h>
+#include <sys/resource.h>
+#include <unistd.h>
+#else
 #include <sys/resource.h>
 #include <unistd.h>
 
