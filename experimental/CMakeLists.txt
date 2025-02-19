@@ -8,21 +8,23 @@ FetchContent_Declare(
 set(BENCHMARK_ENABLE_TESTING OFF) # Disable building the tests
 FetchContent_MakeAvailable(google_benchmark)
 
+FetchContent_Declare(
+        json
+        URL https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz
+)
+FetchContent_MakeAvailable(json)
 
-set(BENCHMARK_SOURCES
-        benchmark_z_algorithm
-        benchmark_kmp
-        benchmark_boyer_moore
-        benchmark_rabin_karp
-        benchmark_suffix_array)
+include_directories(include)
 
-foreach (BENCHMARK_SOURCE ${BENCHMARK_SOURCES})
-    add_executable(env_${BENCHMARK_SOURCE}
-            benchmark.cpp
-            algorithms/${BENCHMARK_SOURCE}.cpp)
-    target_link_libraries(env_${BENCHMARK_SOURCE} PRIVATE
-            substring_lib
-            benchmark
-            )
-    target_include_directories(env_${BENCHMARK_SOURCE} PRIVATE ${CMAKE_SOURCE_DIR}/lib/include)
-endforeach ()
+add_executable(env_benchmark
+        benchmark.cpp
+        )
+target_link_libraries(env_benchmark PRIVATE
+        substring_lib
+        benchmark
+        nlohmann_json
+        )
+
+target_include_directories(env_benchmark PRIVATE ${CMAKE_SOURCE_DIR}/lib/include)
+
+target_compile_definitions(env_benchmark PRIVATE PROJECT_ROOT="${CMAKE_CURRENT_SOURCE_DIR}")
