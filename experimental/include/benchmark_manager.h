@@ -4,6 +4,7 @@
 #include <chrono>
 #include <functional>
 #include <iostream>
+#include <string>
 #ifdef _WIN32
 #include <psapi.h>
 #include <windows.h>
@@ -11,8 +12,7 @@
 #include <mach/mach.h>
 #include <sys/resource.h>
 #else
-#include <sys/resource.h>
-#include <unistd.h>
+#include <fstream>
 #endif
 
 class BenchmarkManager {
@@ -30,9 +30,19 @@ class BenchmarkManager {
         }
         return 0;
 #else
-        struct rusage usage;
-        getrusage(RUSAGE_SELF, &usage);
-        return usage.ru_maxrss;
+        std::ifstream proc_file("/proc/self/status");
+        std::string line;
+        std::string key;
+        int value;
+
+        while (std::getline(proc_file, line)) {
+            std::istringstream iss(line);
+            if (iss >> key >> value) {
+                if (key == "VmRSS:") {
+                    return value;
+                }
+            }
+        }
 #endif
     }
 
