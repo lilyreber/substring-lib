@@ -23,26 +23,22 @@
 // `std::runtime_error`.
 
 class ConfigLoader {
-public:
+   public:
     static std::vector<std::pair<std::size_t, std::size_t>> loadConfig(const std::string &filepath) {
         auto path = filepath;
         std::ifstream file(path);
         if (!file) {
-            throw std::runtime_error(
-                    "Error: Failed to open config file: " + path
-            );
+            throw std::runtime_error("Error: Failed to open config file: " + path);
         }
 
         nlohmann::json config;
         file >> config;
 
-        if (!config.contains("random_sizes") ||
-            !config["random_sizes"].is_array()) {
+        if (!config.contains("random_sizes") || !config["random_sizes"].is_array()) {
             throw std::runtime_error(
-                    "Error: Invalid config format. 'random_sizes' array is missing "
-                    "or "
-                    "incorrect."
-            );
+                "Error: Invalid config format. 'random_sizes' array is missing "
+                "or "
+                "incorrect.");
         }
 
         return config["random_sizes"].get<std::vector<std::pair<std::size_t, std::size_t>>>();

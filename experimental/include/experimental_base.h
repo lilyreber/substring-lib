@@ -2,11 +2,12 @@
 #define SUBSTRING_LIBRARY_EXPERIMENTAL_BASE_H
 
 #include <vector>
+
 #include "benchmark_utils.h"
 #include "substring_lib.h"
 
 class ExperimentalBase {
-protected:
+   protected:
     std::vector<std::pair<std::size_t, std::size_t>> random_sizes;
 
     template <AlgorithmType algorithmType>
@@ -24,15 +25,13 @@ protected:
         search_pattern(text, pattern, algorithmType);
     }
 
-public:
+   public:
     explicit ExperimentalBase(std::vector<std::pair<std::size_t, std::size_t>> sizes)
-            : random_sizes(std::move(sizes)) {
-    }
+        : random_sizes(std::move(sizes)) {}
 
     virtual void RunExperiments() = 0;
 
     virtual ~ExperimentalBase() = default;
 };
 
-
-#endif //SUBSTRING_LIBRARY_EXPERIMENTAL_BASE_H
+#endif  // SUBSTRING_LIBRARY_EXPERIMENTAL_BASE_H

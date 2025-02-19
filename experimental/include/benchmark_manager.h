@@ -16,7 +16,7 @@
 #endif
 
 class BenchmarkManager {
-private:
+   private:
     static std::size_t GetMemoryUsage() {
 #ifdef _WIN32
         PROCESS_MEMORY_COUNTERS memInfo;
@@ -25,10 +25,7 @@ private:
 #elif __APPLE__
         struct mach_task_basic_info info;
         mach_msg_type_number_t size = MACH_TASK_BASIC_INFO_COUNT;
-        if (task_info(
-                mach_task_self(), MACH_TASK_BASIC_INFO, (task_info_t)&info,
-                &size
-        ) == KERN_SUCCESS) {
+        if (task_info(mach_task_self(), MACH_TASK_BASIC_INFO, (task_info_t)&info, &size) == KERN_SUCCESS) {
             return info.resident_size / 1024.0;
         }
         return 0;
@@ -59,10 +56,9 @@ private:
         return std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() / times;
     }
 
-public:
+   public:
     template <typename F, typename... Args>
-    static void
-    Measure(const std::string &experiment_name, F func, Args &&...args) {
+    static void Measure(const std::string &experiment_name, F func, Args &&...args) {
         std::size_t memory_before = GetMemoryUsage();
         auto time = MeasureFirstTime(func, std::forward<Args>(args)...);
         std::size_t memory_after = GetMemoryUsage();
@@ -70,12 +66,10 @@ public:
         std::size_t avg_memory_before = GetMemoryUsage();
         auto avg_time = MeasureAvgTime(func, times, std::forward<Args>(args)...);
         std::size_t avg_memory_after = GetMemoryUsage();
-        std::cerr << experiment_name << "\n\t"
-            << time << " microseconds (single)\n\t"
-            << memory_after - memory_before << " KB (single)\n\t"
-            << avg_time << " microseconds (times=" << times << ")\n\t"
-            << avg_memory_after - avg_memory_before << " KB (times=" << times << ")\n";
+        std::cerr << experiment_name << "\n\t" << time << " microseconds (single)\n\t" << memory_after - memory_before
+                  << " KB (single)\n\t" << avg_time << " microseconds (times=" << times << ")\n\t"
+                  << avg_memory_after - avg_memory_before << " KB (times=" << times << ")\n";
     }
 };
 
-#endif //BENCHMARK_MANAGER_H
+#endif  // BENCHMARK_MANAGER_H
