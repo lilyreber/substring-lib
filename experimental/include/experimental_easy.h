@@ -12,6 +12,7 @@
 
 class ExperimentalEasy : public ExperimentalBase {
    private:
+    // calculate metrics for naive search, random Latin and random binary texts
     template <AlgorithmType algorithmType>
     void RunExperiment(const std::string &experiment_name, std::size_t textSize, std::size_t patternSize) const {
         BenchmarkManager::Measure(experiment_name + "_Naive", MakeNaiveSearch<algorithmType>);
@@ -27,6 +28,7 @@ class ExperimentalEasy : public ExperimentalBase {
     explicit ExperimentalEasy(const std::vector<std::pair<std::size_t, std::size_t>> &sizes)
         : ExperimentalBase(sizes) {}
 
+    // Specify all algorithms which will be measured, for each pair of text-pattern sizes
     void RunExperiments() override {
         for (auto [textSize, patternSize] : random_sizes) {
             RunExperiment<AlgorithmType::KMP>("KMP", textSize, patternSize);

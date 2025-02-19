@@ -7,33 +7,26 @@
 #include <stdexcept>
 #include <vector>
 
-// Загружает конфиг из JSON-файла и извлекает список размеров для тестов.
-//
-// Параметры:
-// - **filename**: имя конфигурационного файла (относительный путь).
-//
-// Функция:
-// - Формирует полный путь к файлу, используя `PROJECT_ROOT`.
-// - Открывает файл и считывает его содержимое в объект `nlohmann::json`.
-// - Проверяет наличие и корректность массива `"random_sizes"`.
-// - Возвращает этот массив как `std::vector<std::pair<std::size_t, std::size_t>>`.
-// - Где первый параметр отвечает textSize, а второй patternSize
-//
-// Если файл не удаётся открыть или формат некорректен, выбрасывается
-// `std::runtime_error`.
-
+/*
+ *  Parameters:
+ *  - filename: absolute path to config file
+ *
+ *  Config:
+ *  - should contain array "random_sizes" with pairs of elements
+ *  - each pair specify "textSize" and "patternSize"
+*/
 class ConfigLoader {
    public:
     static std::vector<std::pair<std::size_t, std::size_t>> loadConfig(const std::string &filepath) {
-        auto path = filepath;
-        std::ifstream file(path);
-        if (!file) {
-            throw std::runtime_error("Error: Failed to open config file: " + path);
+        std::ifstream file(filepath);
+        if (!file) { // if file can't be open throw runtime_error
+            throw std::runtime_error("Error: Failed to open config file: " + filepath);
         }
 
-        nlohmann::json config;
+        nlohmann::json config; // read json config
         file >> config;
 
+        // check that config contains array "random_sizes"
         if (!config.contains("random_sizes") || !config["random_sizes"].is_array()) {
             throw std::runtime_error(
                 "Error: Invalid config format. 'random_sizes' array is missing "
@@ -41,6 +34,7 @@ class ConfigLoader {
                 "incorrect.");
         }
 
+        // convert json structure to std::vector<std::pair<std::size_t, std::size_t>>
         return config["random_sizes"].get<std::vector<std::pair<std::size_t, std::size_t>>>();
     }
 };

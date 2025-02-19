@@ -10,19 +10,11 @@
 #include "experimental_google_benchmark.h"
 #include "substring_lib.h"
 
-// FIXME
-// Конфиг должен содержать список размеров тестируемых наборов данных.
-// Пример:
-//
-// ```
-// {
-//   "random_sizes": [10, 100, 10000]
-// }
-//```
-//
-// Здесь "random_sizes" — это массив, в котором указываются размеры входных
-// данных, использующиеся для тестирования различных алгоритмов рандомными
-// тестами.
+/*
+ *  Config:
+ *  - should contain array "random_sizes" with pairs of elements
+ *  - each pair specify "textSize" and "patternSize"
+ */
 int main(int argc, char *argv[]) {
     try {
         std::string config_filename = "/configs/config.json";

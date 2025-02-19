@@ -10,6 +10,7 @@
 
 class ExperimentalGoogleBenchmark : public ExperimentalBase {
    private:
+    // calculate metrics for naive search, random Latin and random binary texts
     template <AlgorithmType algorithmType>
     void RegisterType(const std::string &class_name, std::size_t textSize, std::size_t patternSize) {
         ::benchmark::RegisterBenchmark(("BM_Naive_Algorithm_Type_" + class_name).c_str(),
@@ -26,6 +27,7 @@ class ExperimentalGoogleBenchmark : public ExperimentalBase {
     explicit ExperimentalGoogleBenchmark(const std::vector<std::pair<std::size_t, std::size_t>> &sizes)
         : ExperimentalBase(sizes) {}
 
+    // create static function for google benchmark with naive search
     template <AlgorithmType algorithmType>
     static void RunNaiveSearch(::benchmark::State &state) {
         for (auto _ : state) {
@@ -33,6 +35,7 @@ class ExperimentalGoogleBenchmark : public ExperimentalBase {
         }
     }
 
+    // create static function for google benchmark with random search
     template <AlgorithmType algorithmType, CharsetTypes charsetType>
     static void RunRandomSearch(::benchmark::State &state) {
         size_t textSize = state.range(0);
@@ -42,6 +45,7 @@ class ExperimentalGoogleBenchmark : public ExperimentalBase {
         }
     }
 
+    // Specify all algorithms which will be measured, for each pair of text-pattern sizes
     void RunExperiments() override {
         for (auto [textSize, patternSize] : random_sizes) {
             RegisterType<AlgorithmType::KMP>("KMP", textSize, patternSize);
