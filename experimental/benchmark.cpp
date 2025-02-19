@@ -29,9 +29,9 @@ int main(int argc, char *argv[]) {
         std::vector<std::pair<std::size_t, std::size_t>> test_sizes =
             ConfigLoader::loadConfig(PROJECT_ROOT + config_filename);
 
-        //        FIXME для Кати
-        ExperimentalGoogleBenchmark experimentalGoogleBenchmark(test_sizes);  // comment for better result
-        experimentalGoogleBenchmark.RunExperiments();                         // comment for better result
+        // can be run separately for better measures
+        ExperimentalGoogleBenchmark experimentalGoogleBenchmark(test_sizes);
+        experimentalGoogleBenchmark.RunExperiments();
         ExperimentalEasy experimentalEasy(test_sizes);
         experimentalEasy.RunExperiments();
     } catch (const std::exception &e) {
