@@ -83,7 +83,7 @@ class BenchmarkManager {
         std::size_t avg_memory_after = GetMemoryUsage();
         std::cerr << experiment_name << "\n\t" << time << " microseconds (single)\n\t" << memory_after - memory_before
                   << " KB (single)\n\t" << avg_time << " microseconds (times=" << times << ")\n\t"
-                  << avg_memory_after - avg_memory_before << " KB (times=" << times << ")\n";
+                  << ((avg_memory_after - avg_memory_before) / times) << " KB (times=" << times << ")\n";
     }
 };
 
