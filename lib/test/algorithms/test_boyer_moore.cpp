@@ -2,68 +2,57 @@
 #include <vector>
 
 #include "doctest.h"
-#include "substring_lib.h"
 
-TEST_CASE("Empty text and empty pattern") {
-    auto result = search_pattern("", "", AlgorithmType::BOYER_MOORE);
-    CHECK(result.empty());
-}
+#define private public
 
-TEST_CASE("Empty text and not empty pattern") {
-    auto result = search_pattern("", "pattern", AlgorithmType::BOYER_MOORE);
-    CHECK(result.empty());
-}
+#include "boyer_moore.h"
 
-TEST_CASE("Not empty text and empty pattern") {
-    auto result = search_pattern("aaaaaaaaaaaaaaaaaaaaa", "", AlgorithmType::BOYER_MOORE);
-    CHECK(result.empty());
-}
-
-TEST_CASE("Simple text and simple pattern") {
-    auto result = search_pattern("simple text", "simple", AlgorithmType::BOYER_MOORE);
-    CHECK_EQ(result, std::vector<std::size_t>{0});
-}
-
-TEST_CASE("Text and pattern are the same") {
-    auto result = search_pattern("simple text", "simple text", AlgorithmType::BOYER_MOORE);
-    CHECK_EQ(result, std::vector<std::size_t>{0});
-}
-
-TEST_CASE("Text with one letter and one letter pattern") {
-    auto result = search_pattern("aaaaaaaaaaaaaaaaaaaaa", "a", AlgorithmType::BOYER_MOORE);
-    CHECK_EQ(result,
-             std::vector<std::size_t>{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
-}
-
-TEST_CASE("Text and big pattern") {
-    auto result = search_pattern("some text", "some bigger text", AlgorithmType::BOYER_MOORE);
-    CHECK(result.empty());
-}
-
-TEST_CASE("Text with some patterns") {
-    auto result = search_pattern("some text some text some", "some text", AlgorithmType::BOYER_MOORE);
-    CHECK_EQ(result, std::vector<std::size_t>{0, 10});
-}
-
-TEST_CASE("Text with some patterns (hard)") {
-    auto result = search_pattern("acbccababcabcaacab", "cab", AlgorithmType::BOYER_MOORE);
-    CHECK_EQ(result, std::vector<std::size_t>{4, 9, 15});
-}
-
-TEST_CASE("Long text and long pattern") {
-    auto result = search_pattern(std::string(10000, 'a') + 'b', std::string(10000, 'a'), AlgorithmType::BOYER_MOORE);
-    CHECK_EQ(result, std::vector<std::size_t>{0});
-}
-
-TEST_CASE("Long text and short pattern") {
-    std::string text;
-    for (int i = 0; i < 5000; ++i) {
-        text += "ab";
+// unit tests for Boyer-Moore algorithm
+TEST_CASE("Boyer-Moore unit tests") {
+    SUBCASE("Constructor easy test") {
+        // Initialize Rabin-Karp with pattern "example"
+        std::string expected = "example";
+        auto bm = BoyerMoore(expected);
+        CHECK_EQ(expected, bm.pattern);
     }
-    auto result = search_pattern(text, "ab", AlgorithmType::BOYER_MOORE);
-    auto expected = std::vector<std::size_t>();
-    for (std::size_t i = 0; i < text.size(); i += 2) {
-        expected.push_back(i);
+
+    SUBCASE("Constructor long test") {
+        // Initialize Rabin-Karp with long pattern
+        std::string expected = std::string(1000, 'a') + std::string(1000, 'b');
+        auto bm = BoyerMoore(expected);
+        CHECK_EQ(expected, bm.pattern);
     }
-    CHECK_EQ(result, expected);
+
+    SUBCASE("Search text") {
+        // Initialize Rabin-Karp with pattern "text"
+        BoyerMoore bm("text");
+
+        // Case 1: Single occurrence
+        auto result1 = bm.search("this is a text");
+        CHECK_EQ(result1, std::vector<std::size_t>{10});  // "text" starts at index 10
+
+        // Case 2: Multiple occurrences
+        auto result2 = bm.search("text some text some text");
+        CHECK_EQ(result2, std::vector<std::size_t>{0, 10, 20});  // "text" found at indices 0, 11, and 20
+
+        // Case 3: No match
+        auto result3 = bm.search("non match example");
+        CHECK(result3.empty());  // "text" is not in the text
+
+        // Case 4: Pattern longer than text
+        auto result4 = bm.search("short");
+        CHECK(result4.empty());  // Pattern cannot fit in the text
+
+        // Case 5: Matching single character multiple times
+        BoyerMoore bm_single("a");
+        auto result5 = bm_single.search("aaaaaaa");
+        CHECK_EQ(result5, std::vector<std::size_t>{0, 1, 2, 3, 4, 5, 6});  // 'a' found at every index
+
+        // Case 6: Long text with pattern at the end
+        std::string long_text(10000, 'a');  // Create a long text of 10000 'a's
+        long_text += "b";                   // Append 'b' at the end
+        BoyerMoore bm_long("b");
+        auto result6 = bm_long.search(long_text);
+        CHECK_EQ(result6, std::vector<std::size_t>{10000});  // 'b' is at the last position
+    }
 }
