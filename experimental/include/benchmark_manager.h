@@ -30,19 +30,24 @@ class BenchmarkManager {
         }
         return 0;
 #else
-        std::ifstream proc_file("/proc/self/status");
-        std::string line;
-        std::string key;
-        int value;
+//        std::ifstream proc_file("/proc/self/status");
+//        std::string line;
+//        std::string key;
+//        int value;
+//
+//        while (std::getline(proc_file, line)) {
+//            std::istringstream iss(line);
+//            if (iss >> key >> value) {
+//                if (key == "VmRSS:") {
+//                    return value;
+//                }
+//            }
+//        }
+//        FIXME для Кати два варианта
+        struct rusage usage;
+        getrusage(RUSAGE_SELF, &usage);
+        return usage.ru_maxrss;
 
-        while (std::getline(proc_file, line)) {
-            std::istringstream iss(line);
-            if (iss >> key >> value) {
-                if (key == "VmRSS:") {
-                    return value;
-                }
-            }
-        }
 #endif
     }
 

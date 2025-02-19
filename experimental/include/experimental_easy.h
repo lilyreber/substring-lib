@@ -34,6 +34,7 @@ class ExperimentalEasy : public ExperimentalBase {
             RunExperiment<AlgorithmType::RABIN_KARP>("Rabin-Karp", textSize, patternSize);
             RunExperiment<AlgorithmType::SUFFIX_ARRAY>("Suffix-Array", textSize, patternSize);
             RunExperiment<AlgorithmType::Z_ALGORITHM>("Z-Algorithm", textSize, patternSize);
+            RunExperiment<AlgorithmType::NOT_SO_NAIVE>("Not-so-naive", textSize, patternSize);
         }
     }
 };
