@@ -2,69 +2,87 @@
 #include <vector>
 
 #include "doctest.h"
-#include "substring_lib.h"
+#define private public
+#include "z_algorithm.h"
 
-// check search
-TEST_CASE("Empty text and empty pattern") {
-    auto result = search_pattern("", "", AlgorithmType::Z_ALGORITHM);
-    CHECK(result.empty());
-}
-
-TEST_CASE("Empty text and not empty pattern") {
-    auto result = search_pattern("", "pattern", AlgorithmType::Z_ALGORITHM);
-    CHECK(result.empty());
-}
-
-TEST_CASE("Not empty text and empty pattern") {
-    auto result = search_pattern("aaaaaaaaaaaaaaaaaaaaa", "", AlgorithmType::Z_ALGORITHM);
-    CHECK(result.empty());
-}
-
-TEST_CASE("Simple text and simple pattern") {
-    auto result = search_pattern("simple text", "simple", AlgorithmType::Z_ALGORITHM);
-    CHECK_EQ(result, std::vector<std::size_t>{0});
-}
-
-TEST_CASE("Text and pattern are the same") {
-    auto result = search_pattern("simple text", "simple text", AlgorithmType::Z_ALGORITHM);
-    CHECK_EQ(result, std::vector<std::size_t>{0});
-}
-
-TEST_CASE("Text with one letter and one letter pattern") {
-    auto result = search_pattern("aaaaaaaaaaaaaaaaaaaaa", "a", AlgorithmType::Z_ALGORITHM);
-    CHECK_EQ(result,
-             std::vector<std::size_t>{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
-}
-
-TEST_CASE("Text and big pattern") {
-    auto result = search_pattern("some text", "some bigger text", AlgorithmType::Z_ALGORITHM);
-    CHECK(result.empty());
-}
-
-TEST_CASE("Text with some patterns") {
-    auto result = search_pattern("some text some text some", "some text", AlgorithmType::Z_ALGORITHM);
-    CHECK_EQ(result, std::vector<std::size_t>{0, 10});
-}
-
-TEST_CASE("Text with some patterns (hard)") {
-    auto result = search_pattern("acbccababcabcaacab", "cab", AlgorithmType::Z_ALGORITHM);
-    CHECK_EQ(result, std::vector<std::size_t>{4, 9, 15});
-}
-
-TEST_CASE("Long text and long pattern") {
-    auto result = search_pattern(std::string(10000, 'a') + 'b', std::string(10000, 'a'), AlgorithmType::Z_ALGORITHM);
-    CHECK_EQ(result, std::vector<std::size_t>{0});
-}
-
-TEST_CASE("Long text and short pattern") {
-    std::string text;
-    for (int i = 0; i < 5000; ++i) {
-        text += "ab";
+// Unit tests for Z-algorithm
+TEST_CASE("Z-function tests") {
+    // Initialize Z-algorithm with pattern "example"
+    SUBCASE("Constructor easy test") {
+        std::string expected = "example";
+        auto z = ZAlgorithm(expected);
+        CHECK_EQ(expected, z.pattern);
     }
-    auto result = search_pattern(text, "ab", AlgorithmType::Z_ALGORITHM);
-    auto expected = std::vector<std::size_t>();
-    for (std::size_t i = 0; i < text.size(); i += 2) {
-        expected.push_back(i);
+
+    // Initialize Z-algorithm with long pattern
+    SUBCASE("Constructor long test") {
+        std::string expected = std::string(1000, 'a') + std::string(1000, 'b');
+        auto z = ZAlgorithm(expected);
+        CHECK_EQ(expected, z.pattern);
     }
-    CHECK_EQ(result, expected);
+
+    // empty string z-function test
+    SUBCASE("Empty string") {
+        ZAlgorithm zAlgorithm("pattern");
+        std::string s = "";
+        std::vector<std::size_t> result = zAlgorithm.computeZFunction(s);
+        CHECK(result.empty());
+    }
+
+    // Single character string test
+    SUBCASE("Single character") {
+        ZAlgorithm zAlgorithm("pattern");
+        std::string s = "a";
+        std::vector<std::size_t> result = zAlgorithm.computeZFunction(s);
+        REQUIRE_EQ(result.size(), 1);
+        CHECK_EQ(result[0], 0);
+    }
+
+    // Test for a string with repeated characters
+    SUBCASE("Repeated characters") {
+        ZAlgorithm zAlgorithm("pattern");
+        std::string s = "aaaa";
+        std::vector<std::size_t> result = zAlgorithm.computeZFunction(s);
+        std::vector<std::size_t> expected = {0, 3, 2, 1};
+        REQUIRE_EQ(result.size(), expected.size());
+        for (std::size_t i = 0; i < result.size(); ++i) {
+            CHECK_EQ(result[i], expected[i]);
+        }
+    }
+
+    // Test for a string with unique characters
+    SUBCASE("Unique characters") {
+        ZAlgorithm zAlgorithm("pattern");
+        std::string s = "abcdef";
+        std::vector<std::size_t> result = zAlgorithm.computeZFunction(s);
+        std::vector<std::size_t> expected = {0, 0, 0, 0, 0, 0};
+        REQUIRE_EQ(result.size(), expected.size());
+        for (std::size_t i = 0; i < result.size(); ++i) {
+            CHECK_EQ(result[i], expected[i]);
+        }
+    }
+
+    // Test for a string with partially repeated characters
+    SUBCASE("Partially repeated characters") {
+        ZAlgorithm zAlgorithm("pattern");
+        std::string s = "aabcaab";
+        std::vector<std::size_t> result = zAlgorithm.computeZFunction(s);
+        std::vector<std::size_t> expected = {0, 1, 0, 0, 3, 1, 0};
+        REQUIRE_EQ(result.size(), expected.size());
+        for (std::size_t i = 0; i < result.size(); ++i) {
+            CHECK_EQ(result[i], expected[i]);
+        }
+    }
+
+    // Test for a string with a repeating pattern
+    SUBCASE("Repeated pattern") {
+        ZAlgorithm zAlgorithm("pattern");
+        std::string s = "abababab";
+        std::vector<std::size_t> result = zAlgorithm.computeZFunction(s);
+        std::vector<std::size_t> expected = {0, 0, 6, 0, 4, 0, 2, 0};
+        REQUIRE_EQ(result.size(), expected.size());
+        for (std::size_t i = 0; i < result.size(); ++i) {
+            CHECK_EQ(result[i], expected[i]);
+        }
+    }
 }
