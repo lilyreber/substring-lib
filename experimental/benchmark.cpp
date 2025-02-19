@@ -1,12 +1,14 @@
 #include <benchmark/benchmark.h>
+
 #include <functional>
+#include <iostream>
 #include <memory>
 #include <vector>
-#include <iostream>
-#include "substring_lib.h"
+
 #include "config_loader.h"
-#include "experimental_google_benchmark.h"
 #include "experimental_easy.h"
+#include "experimental_google_benchmark.h"
+#include "substring_lib.h"
 
 // FIXME
 // Конфиг должен содержать список размеров тестируемых наборов данных.
@@ -28,12 +30,12 @@ int main(int argc, char *argv[]) {
             config_filename = argv[1];
         } else if (argc > 2) {
             throw std::runtime_error(
-                    "Error: to many arguments.\nUsage: ./benchmark "
-                    "<config.json>"
-            );
+                "Error: to many arguments.\nUsage: ./benchmark "
+                "<config.json>");
         }
 
-        std::vector<std::pair<std::size_t, std::size_t>> test_sizes = ConfigLoader::loadConfig(PROJECT_ROOT + config_filename);
+        std::vector<std::pair<std::size_t, std::size_t>> test_sizes =
+            ConfigLoader::loadConfig(PROJECT_ROOT + config_filename);
 
         ExperimentalGoogleBenchmark experimentalGoogleBenchmark(test_sizes);
         experimentalGoogleBenchmark.RunExperiments();
