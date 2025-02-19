@@ -14,16 +14,16 @@
  *  Config:
  *  - should contain array "random_sizes" with pairs of elements
  *  - each pair specify "textSize" and "patternSize"
-*/
+ */
 class ConfigLoader {
    public:
     static std::vector<std::pair<std::size_t, std::size_t>> loadConfig(const std::string &filepath) {
         std::ifstream file(filepath);
-        if (!file) { // if file can't be open throw runtime_error
+        if (!file) {  // if file can't be open throw runtime_error
             throw std::runtime_error("Error: Failed to open config file: " + filepath);
         }
 
-        nlohmann::json config; // read json config
+        nlohmann::json config;  // read json config
         file >> config;
 
         // check that config contains array "random_sizes"

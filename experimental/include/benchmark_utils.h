@@ -21,8 +21,8 @@ class RandomStringGenerator {
     // return random string specified size and with chars from alphabet
     std::string getRandomString(std::size_t size, CharsetTypes type) {
         std::string charset = charsets[type];
-        randomString.reserve(size); // reserve memory
-        for (std::size_t i = 0; i < size; ++i) { // fill string with random chars
+        randomString.reserve(size);               // reserve memory
+        for (std::size_t i = 0; i < size; ++i) {  // fill string with random chars
             randomString += charset[rand() % (charset.size() - 1)];
         }
         return randomString;
