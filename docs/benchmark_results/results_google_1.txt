@@ -1,0 +1,121 @@
+----------------------------------------------------------------------------------------------------
+Benchmark                                                          Time             CPU   Iterations
+----------------------------------------------------------------------------------------------------
+BM_Naive_Algorithm_Type_KMP                                     5974 ns         5927 ns       118922
+BM_Naive_Algorithm_Type_Boyer-Moore                            11179 ns        11097 ns        62740
+BM_Naive_Algorithm_Type_Rabin-Karp                              4239 ns         4205 ns       167448
+BM_Naive_Algorithm_Type_Suffix-Array                           54799 ns        54509 ns        12984
+BM_Naive_Algorithm_Type_Z-Algorithm                            11118 ns        11064 ns        64046
+BM_Naive_Algorithm_Type_Not-so-naive                            4240 ns         4199 ns       165035
+---------------------------------------------------------------------------------------------------
+BM_Random_Latin_Algorithm_Type_KMP/10/2                         8170 ns         8103 ns        86607
+BM_Random_Latin_Algorithm_Type_Boyer-Moore/10/2                13936 ns        13727 ns        53056
+BM_Random_Latin_Algorithm_Type_Rabin-Karp/10/2                  4393 ns         4363 ns       159366
+BM_Random_Latin_Algorithm_Type_Suffix-Array/10/2               17472 ns        17332 ns        39808
+BM_Random_Latin_Algorithm_Type_Z-Algorithm/10/2                11354 ns        11276 ns        63807
+BM_Random_Latin_Algorithm_Type_Not-so-naive/10/2                4520 ns         4490 ns       159428
+
+BM_Random_Binary_Algorithm_Type_KMP/10/2                        8303 ns         8237 ns        85262
+BM_Random_Binary_Algorithm_Type_Boyer-Moore/10/2               12776 ns        12766 ns        54857
+BM_Random_Binary_Algorithm_Type_Rabin-Karp/10/2                 4046 ns         4022 ns       173644
+BM_Random_Binary_Algorithm_Type_Suffix-Array/10/2              15923 ns        15812 ns        44569
+BM_Random_Binary_Algorithm_Type_Z-Algorithm/10/2               11638 ns        11539 ns        61605
+BM_Random_Binary_Algorithm_Type_Not-so-naive/10/2               4230 ns         4191 ns       168139
+---------------------------------------------------------------------------------------------------
+BM_Random_Latin_Algorithm_Type_KMP/100/2                       31471 ns        31175 ns        22329
+BM_Random_Latin_Algorithm_Type_Boyer-Moore/100/2               25858 ns        25663 ns        27570
+BM_Random_Latin_Algorithm_Type_Rabin-Karp/100/2                 9788 ns         9675 ns        72990
+BM_Random_Latin_Algorithm_Type_Suffix-Array/100/2             253152 ns       251883 ns         2762
+BM_Random_Latin_Algorithm_Type_Z-Algorithm/100/2               57594 ns        57009 ns        12558
+BM_Random_Latin_Algorithm_Type_Not-so-naive/100/2               9971 ns         9867 ns        71754
+
+BM_Random_Binary_Algorithm_Type_KMP/100/2                      35732 ns        35409 ns        19484
+BM_Random_Binary_Algorithm_Type_Boyer-Moore/100/2              24942 ns        24740 ns        28080
+BM_Random_Binary_Algorithm_Type_Rabin-Karp/100/2                9403 ns         9320 ns        75419
+BM_Random_Binary_Algorithm_Type_Suffix-Array/100/2            118970 ns       117813 ns         6042
+BM_Random_Binary_Algorithm_Type_Z-Algorithm/100/2              65158 ns        64157 ns        11560
+BM_Random_Binary_Algorithm_Type_Not-so-naive/100/2              9540 ns         9454 ns        75991
+---------------------------------------------------------------------------------------------------
+BM_Random_Latin_Algorithm_Type_KMP/1000/2                     256223 ns       254016 ns         2734
+BM_Random_Latin_Algorithm_Type_Boyer-Moore/1000/2             138748 ns       137347 ns         4825
+BM_Random_Latin_Algorithm_Type_Rabin-Karp/1000/2               56542 ns        55999 ns        12720
+BM_Random_Latin_Algorithm_Type_Suffix-Array/1000/2           3777780 ns      3757319 ns          185
+BM_Random_Latin_Algorithm_Type_Z-Algorithm/1000/2             506036 ns       500929 ns         1000
+BM_Random_Latin_Algorithm_Type_Not-so-naive/1000/2             58205 ns        57754 ns        11936
+
+BM_Random_Binary_Algorithm_Type_KMP/1000/2                    306517 ns       303714 ns         2325
+BM_Random_Binary_Algorithm_Type_Boyer-Moore/1000/2            142033 ns       140239 ns         5175
+BM_Random_Binary_Algorithm_Type_Rabin-Karp/1000/2              55917 ns        55368 ns        12841
+BM_Random_Binary_Algorithm_Type_Suffix-Array/1000/2          2952789 ns      2932202 ns          238
+BM_Random_Binary_Algorithm_Type_Z-Algorithm/1000/2            554326 ns       548827 ns         1297
+BM_Random_Binary_Algorithm_Type_Not-so-naive/1000/2            54770 ns        54477 ns        12476
+---------------------------------------------------------------------------------------------------
+BM_Random_Latin_Algorithm_Type_KMP/1000/5                     255858 ns       252973 ns         2767
+BM_Random_Latin_Algorithm_Type_Boyer-Moore/1000/5             139484 ns       138340 ns         5163
+BM_Random_Latin_Algorithm_Type_Rabin-Karp/1000/5               56049 ns        55575 ns        12705
+BM_Random_Latin_Algorithm_Type_Suffix-Array/1000/5           3817063 ns      3766444 ns          189
+BM_Random_Latin_Algorithm_Type_Z-Algorithm/1000/5             505463 ns       502238 ns         1000
+BM_Random_Latin_Algorithm_Type_Not-so-naive/1000/5             56576 ns        56217 ns        12650
+
+BM_Random_Binary_Algorithm_Type_KMP/1000/5                    301946 ns       299215 ns         2344
+BM_Random_Binary_Algorithm_Type_Boyer-Moore/1000/5            135607 ns       134508 ns         5155
+BM_Random_Binary_Algorithm_Type_Rabin-Karp/1000/5              55173 ns        54812 ns        12918
+BM_Random_Binary_Algorithm_Type_Suffix-Array/1000/5          3065983 ns      3002671 ns          237
+BM_Random_Binary_Algorithm_Type_Z-Algorithm/1000/5            545462 ns       542402 ns         1311
+BM_Random_Binary_Algorithm_Type_Not-so-naive/1000/5            54821 ns        54492 ns        12817
+---------------------------------------------------------------------------------------------------
+BM_Random_Latin_Algorithm_Type_KMP/100000/2                 24635432 ns     24416414 ns           29
+BM_Random_Latin_Algorithm_Type_Boyer-Moore/100000/2         12330488 ns     12260386 ns           57
+BM_Random_Latin_Algorithm_Type_Rabin-Karp/100000/2           5133176 ns      5100399 ns          138
+BM_Random_Latin_Algorithm_Type_Suffix-Array/100000/2      1009588875 ns   1004378000 ns            1
+BM_Random_Latin_Algorithm_Type_Z-Algorithm/100000/2         49699365 ns     49281692 ns           13
+BM_Random_Latin_Algorithm_Type_Not-so-naive/100000/2         5108073 ns      5075672 ns          137
+
+BM_Random_Binary_Algorithm_Type_KMP/100000/2                29407194 ns     29236333 ns           24
+BM_Random_Binary_Algorithm_Type_Boyer-Moore/100000/2        12217844 ns     12145947 ns           57
+BM_Random_Binary_Algorithm_Type_Rabin-Karp/100000/2          5083443 ns      5048317 ns          139
+BM_Random_Binary_Algorithm_Type_Suffix-Array/100000/2      855362625 ns    850517000 ns            1
+BM_Random_Binary_Algorithm_Type_Z-Algorithm/100000/2        55514353 ns     54826077 ns           13
+BM_Random_Binary_Algorithm_Type_Not-so-naive/100000/2        5048957 ns      5005929 ns          140
+---------------------------------------------------------------------------------------------------
+BM_Random_Latin_Algorithm_Type_KMP/100000/10                24553066 ns     24408621 ns           29
+BM_Random_Latin_Algorithm_Type_Boyer-Moore/100000/10        12285186 ns     12211709 ns           55
+BM_Random_Latin_Algorithm_Type_Rabin-Karp/100000/10          5117850 ns      5089993 ns          139
+BM_Random_Latin_Algorithm_Type_Suffix-Array/100000/10     1008004583 ns   1005036000 ns            1
+BM_Random_Latin_Algorithm_Type_Z-Algorithm/100000/10        49557414 ns     49273714 ns           14
+BM_Random_Latin_Algorithm_Type_Not-so-naive/100000/10        5111721 ns      5070072 ns          139
+
+BM_Random_Binary_Algorithm_Type_KMP/100000/10               29637564 ns     29396500 ns           24
+BM_Random_Binary_Algorithm_Type_Boyer-Moore/100000/10       12274693 ns     12191895 ns           57
+BM_Random_Binary_Algorithm_Type_Rabin-Karp/100000/10         5090856 ns      5058380 ns          100
+BM_Random_Binary_Algorithm_Type_Suffix-Array/100000/10     852360375 ns    849235000 ns            1
+BM_Random_Binary_Algorithm_Type_Z-Algorithm/100000/10       53950154 ns     53626923 ns           13
+BM_Random_Binary_Algorithm_Type_Not-so-naive/100000/10       4983072 ns      4969117 ns          137
+
+
+
+Benchmark                                                         Time             CPU   Iterations
+---------------------------------------------------------------------------------------------------
+BM_Random_Latin_Algorithm_Type_KMP/10000000/5            2439167417 ns   2425670000 ns            1
+BM_Random_Latin_Algorithm_Type_Boyer-Moore/10000000/5    1225750375 ns   1218706000 ns            1
+BM_Random_Latin_Algorithm_Type_Rabin-Karp/10000000/5      512004542 ns    509314000 ns            1
+BM_Random_Latin_Algorithm_Type_Z-Algorithm/10000000/5    4848003750 ns   4824487000 ns            1
+BM_Random_Latin_Algorithm_Type_Not-so-naive/10000000/5    512033542 ns    507319000 ns            1
+
+BM_Random_Binary_Algorithm_Type_KMP/10000000/5           2912686875 ns   2897371000 ns            1
+BM_Random_Binary_Algorithm_Type_Boyer-Moore/10000000/5   1224943291 ns   1217843000 ns            1
+BM_Random_Binary_Algorithm_Type_Rabin-Karp/10000000/5     506138833 ns    503415000 ns            1
+BM_Random_Binary_Algorithm_Type_Z-Algorithm/10000000/5   5295319917 ns   5264762000 ns            1
+BM_Random_Binary_Algorithm_Type_Not-so-naive/10000000/5   503807875 ns    500956000 ns            1
+
+BM_Random_Latin_Algorithm_Type_KMP/10000000/15           2434370667 ns   2421398000 ns            1
+BM_Random_Latin_Algorithm_Type_Boyer-Moore/10000000/15   1225404084 ns   1218687000 ns            1
+BM_Random_Latin_Algorithm_Type_Rabin-Karp/10000000/15     511880917 ns    509328000 ns            1
+BM_Random_Latin_Algorithm_Type_Z-Algorithm/10000000/15   4844887875 ns   4817099000 ns            1
+BM_Random_Latin_Algorithm_Type_Not-so-naive/10000000/15   511786417 ns    508810000 ns            1
+
+BM_Random_Binary_Algorithm_Type_KMP/10000000/15          2927559542 ns   2910295000 ns            1
+BM_Random_Binary_Algorithm_Type_Boyer-Moore/10000000/15  1223597833 ns   1216327000 ns            1
+BM_Random_Binary_Algorithm_Type_Rabin-Karp/10000000/15    506342416 ns    503618000 ns            1
+BM_Random_Binary_Algorithm_Type_Z-Algorithm/10000000/15  5277202792 ns   5247825000 ns            1
+BM_Random_Binary_Algorithm_Type_Not-so-naive/10000000/15  506229458 ns    502332000 ns            1
