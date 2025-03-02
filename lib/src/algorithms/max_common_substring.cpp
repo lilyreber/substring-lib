@@ -7,7 +7,7 @@ std::vector<std::size_t> MaxCommonSubstring::search(const std::string &pattern) 
     std::size_t n = text.size(), m = pattern.size();
 
     if (m == 0 || m > n) {
-        return result;  // Нет смысла искать пустой или слишком длинный шаблон
+        return result;
     }
 
     for (std::size_t i = 0; i <= n - m; ++i) {

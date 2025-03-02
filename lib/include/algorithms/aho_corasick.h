@@ -22,7 +22,7 @@ class AhoCorasick {
     void buildFailureLinks();
 
     TrieNode* root;
-    std::string text;  // Добавил текст в класс
+    std::string text;
 };
 
 #endif  // SUBSTRING_LIB_AHO_CORASICK_H

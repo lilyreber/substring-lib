@@ -13,7 +13,7 @@ void AhoCorasick::buildTrie(const std::string &pattern) {
         }
         node = node->children[c];
     }
-    node->output.push_back(pattern.size());  // Сохраняем длину паттерна
+    node->output.push_back(pattern.size());
 }
 
 void AhoCorasick::buildFailureLinks() {
@@ -53,7 +53,7 @@ std::vector<std::size_t> AhoCorasick::search(const std::string &pattern) const {
         }
         node = node->children[text[i]];
         for (std::size_t len : node->output) {
-            result.push_back(i - len + 1); // Добавляем индекс начала совпадения
+            result.push_back(i - len + 1);
         }
     }
     return result;
