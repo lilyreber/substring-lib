@@ -48,12 +48,12 @@ class ExperimentalGoogleBenchmark : public ExperimentalBase {
     // Specify all algorithms which will be measured, for each pair of text-pattern sizes
     void RunExperiments() override {
         for (auto [textSize, patternSize] : random_sizes) {
-            RegisterType<AlgorithmType::KMP>("KMP", textSize, patternSize);
-            RegisterType<AlgorithmType::BOYER_MOORE>("Boyer-Moore", textSize, patternSize);
-            RegisterType<AlgorithmType::RABIN_KARP>("Rabin-Karp", textSize, patternSize);
+            // RegisterType<AlgorithmType::KMP>("KMP", textSize, patternSize);
+            // RegisterType<AlgorithmType::BOYER_MOORE>("Boyer-Moore", textSize, patternSize);
+            // RegisterType<AlgorithmType::RABIN_KARP>("Rabin-Karp", textSize, patternSize);
             RegisterType<AlgorithmType::SUFFIX_ARRAY>("Suffix-Array", textSize, patternSize);
-            RegisterType<AlgorithmType::Z_ALGORITHM>("Z-Algorithm", textSize, patternSize);
-            RegisterType<AlgorithmType::NOT_SO_NAIVE>("Not-so-naive", textSize, patternSize);
+            // RegisterType<AlgorithmType::Z_ALGORITHM>("Z-Algorithm", textSize, patternSize);
+            // RegisterType<AlgorithmType::NOT_SO_NAIVE>("Not-so-naive", textSize, patternSize);
         }
 
         ::benchmark::RunSpecifiedBenchmarks();

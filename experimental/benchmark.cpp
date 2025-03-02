@@ -32,8 +32,8 @@ int main(int argc, char *argv[]) {
         // can be run separately for better measures
         ExperimentalGoogleBenchmark experimentalGoogleBenchmark(test_sizes);
         experimentalGoogleBenchmark.RunExperiments();
-        ExperimentalEasy experimentalEasy(test_sizes);
-        experimentalEasy.RunExperiments();
+        // ExperimentalEasy experimentalEasy(test_sizes);
+        // experimentalEasy.RunExperiments();
     } catch (const std::exception &e) {
         std::cerr << e.what() << "\n";
         return 1;
