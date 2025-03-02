@@ -2,8 +2,11 @@
 
 #include <stdexcept>
 
+#include "aho_corasick.h"
 #include "boyer_moore.h"
 #include "kmp.h"
+#include "lcp.h"
+#include "max_common_substring.h"
 #include "not_so_naive.h"
 #include "rabin_karp.h"
 #include "suffix_array.h"
@@ -23,6 +26,10 @@ std::vector<std::size_t> search_pattern(const std::string &text, const std::stri
             return RabinKarp(pattern).search(text);
         case AlgorithmType::NOT_SO_NAIVE:
             return NotSoNaive(text).search(pattern);
+        case AlgorithmType::AHO_CORASICK:
+            return AhoCorasick(text).search(pattern);
+        case AlgorithmType::MAX_COMMON_SUBSTRING :
+            return MaxCommonSubstring(text).search(pattern);
         default:
             throw std::invalid_argument("Unknown algorithm type");
     }

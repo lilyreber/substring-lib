@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.22)
 project(substring_lib)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -12,6 +12,9 @@ add_library(substring_lib STATIC
         src/algorithms/suffix_array.cpp
         src/algorithms/rabin_karp.cpp
         src/algorithms/not_so_naive.cpp
+        src/algorithms/aho_corasick.cpp
+        src/algorithms/max_common_substring.cpp
+        src/algorithms/lcp.cpp
         )
 target_include_directories(substring_lib PUBLIC
         include/algorithms
@@ -24,6 +27,8 @@ set(TEST_SOURCES
         test/algorithms/test_rabin_karp.cpp
         test/algorithms/test_suffix_array.cpp
         test/algorithms/test_not_so_naive.cpp
+        test/algorithms/test_aho_corasick.cpp
+        test/algorithms/test_max_common_substring.cpp
         test/algorithms/integration_tests.cpp
         )
 

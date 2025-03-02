@@ -14,6 +14,8 @@ TEST_CASE("Test search_pattern for all algorithms") {
     SUBCASE("Suffix Array algorithm") { run_tests_for_algorithm(AlgorithmType::SUFFIX_ARRAY); }
     SUBCASE("Z algorithm") { run_tests_for_algorithm(AlgorithmType::Z_ALGORITHM); }
     SUBCASE("Not So Naive algorithm") { run_tests_for_algorithm(AlgorithmType::NOT_SO_NAIVE); }
+    SUBCASE("Aho-Corasick algorithm") { run_tests_for_algorithm(AlgorithmType::AHO_CORASICK); }
+    SUBCASE("Max Common Substring algorithm") { run_tests_for_algorithm(AlgorithmType::MAX_COMMON_SUBSTRING);}
 }
 
 void run_tests_for_algorithm(AlgorithmType algorithm) {
