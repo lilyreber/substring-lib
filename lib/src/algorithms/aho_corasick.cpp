@@ -8,7 +8,7 @@ AhoCorasick::AhoCorasick(const std::string &pattern) {
 }
 
 void AhoCorasick::buildTrie(const std::string &pattern) {
-    TrieNode* node = root;
+    TrieNode *node = root;
     for (char c : pattern) {
         if (!node->children.count(c)) {
             node->children[c] = new TrieNode();
@@ -19,7 +19,7 @@ void AhoCorasick::buildTrie(const std::string &pattern) {
 }
 
 void AhoCorasick::buildFailureLinks() {
-    std::queue<TrieNode*> q;
+    std::queue<TrieNode *> q;
     for (auto &[c, node] : root->children) {
         node->failureLink = root;
         q.push(node);
@@ -42,7 +42,7 @@ void AhoCorasick::buildFailureLinks() {
 
 std::vector<std::size_t> AhoCorasick::search(const std::string &text) const {
     std::vector<std::size_t> result;
-    TrieNode* node = root;
+    TrieNode *node = root;
 
     for (std::size_t i = 0; i < text.size(); ++i) {
         while (node && !node->children.count(text[i])) {

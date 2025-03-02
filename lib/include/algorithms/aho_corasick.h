@@ -1,10 +1,10 @@
 #ifndef SUBSTRING_LIB_AHO_CORASICK_H
 #define SUBSTRING_LIB_AHO_CORASICK_H
 
-#include <string>
-#include <vector>
-#include <unordered_map>
 #include <queue>
+#include <string>
+#include <unordered_map>
+#include <vector>
 
 class AhoCorasick {
    public:
@@ -13,15 +13,15 @@ class AhoCorasick {
 
    private:
     struct TrieNode {
-        std::unordered_map<char, TrieNode*> children;
-        TrieNode* failureLink = nullptr;
+        std::unordered_map<char, TrieNode *> children;
+        TrieNode *failureLink = nullptr;
         bool isEndOfPattern = false;
     };
 
     void buildTrie(const std::string &pattern);
     void buildFailureLinks();
 
-    TrieNode* root;
+    TrieNode *root;
     std::size_t patternLength;
 };
 
