@@ -54,6 +54,8 @@ class ExperimentalGoogleBenchmark : public ExperimentalBase {
             RegisterType<AlgorithmType::SUFFIX_ARRAY>("Suffix-Array", textSize, patternSize);
             RegisterType<AlgorithmType::Z_ALGORITHM>("Z-Algorithm", textSize, patternSize);
             RegisterType<AlgorithmType::NOT_SO_NAIVE>("Not-so-naive", textSize, patternSize);
+            RegisterType<AlgorithmType::AHO_CORASICK>("Aho-Corasick", textSize, patternSize);
+            RegisterType<AlgorithmType::MAX_COMMON_SUBSTRING>("Max-common-substring", textSize, patternSize);
         }
 
         ::benchmark::RunSpecifiedBenchmarks();
