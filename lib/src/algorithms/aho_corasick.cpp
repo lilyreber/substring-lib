@@ -1,19 +1,21 @@
 #include "aho_corasick.h"
 
-AhoCorasick::AhoCorasick(const std::string &text) : text(text) {
+AhoCorasick::AhoCorasick(const std::string &pattern) {
     root = new TrieNode();
+    patternLength = pattern.size();
+    buildTrie(pattern);
+    buildFailureLinks();
 }
 
 void AhoCorasick::buildTrie(const std::string &pattern) {
     TrieNode* node = root;
-    for (std::size_t i = 0; i < pattern.size(); ++i) {
-        char c = pattern[i];
+    for (char c : pattern) {
         if (!node->children.count(c)) {
             node->children[c] = new TrieNode();
         }
         node = node->children[c];
     }
-    node->output.push_back(pattern.size());
+    node->isEndOfPattern = true;
 }
 
 void AhoCorasick::buildFailureLinks() {
@@ -33,13 +35,12 @@ void AhoCorasick::buildFailureLinks() {
                 fail = fail->failureLink;
             }
             child->failureLink = fail ? fail->children[c] : root;
-            child->output.insert(child->output.end(), child->failureLink->output.begin(), child->failureLink->output.end());
             q.push(child);
         }
     }
 }
 
-std::vector<std::size_t> AhoCorasick::search(const std::string &pattern) const {
+std::vector<std::size_t> AhoCorasick::search(const std::string &text) const {
     std::vector<std::size_t> result;
     TrieNode* node = root;
 
@@ -52,9 +53,10 @@ std::vector<std::size_t> AhoCorasick::search(const std::string &pattern) const {
             continue;
         }
         node = node->children[text[i]];
-        for (std::size_t len : node->output) {
-            result.push_back(i - len + 1);
+        if (node->isEndOfPattern) {
+            result.push_back(i - patternLength + 1);
         }
     }
+
     return result;
 }

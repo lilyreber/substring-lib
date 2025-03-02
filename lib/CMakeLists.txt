@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.23)
 project(substring_lib)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -14,7 +14,6 @@ add_library(substring_lib STATIC
         src/algorithms/not_so_naive.cpp
         src/algorithms/aho_corasick.cpp
         src/algorithms/max_common_substring.cpp
-        src/algorithms/lcp.cpp
         )
 target_include_directories(substring_lib PUBLIC
         include/algorithms
