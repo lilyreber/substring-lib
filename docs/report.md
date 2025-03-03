@@ -56,6 +56,14 @@ m - размер паттерна, n - размер текста
 * `Z-Algorithm` ~ 0.5n microsec
 * `Suffix Array` ~ 2-9n microsec
 
+#### Средняя затраченная память
+* `Rabin-Karp`: ~ 0 KB
+* `Not So Naive`: ~ 0 KB
+* `Boyer-Moore`: ~ 3n B
+* `KMP`: ~ 12n B
+* `Z-Algorithm`: ~ 9n B
+* `Suffix Array`: ~ 27n B
+
 #### Общие сведения
 * Rabin-Karp и Not-so-naive остаются самыми быстрыми алгоритмами с константами 18.
 * Алгоритмы `Rabin-Karp` и `Not So Naive` показывают практически идентичные результаты на всех тестах
