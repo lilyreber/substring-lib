@@ -78,7 +78,7 @@ You can now use Graaf in your source files:
 #include <substring_lib.h>
 ```
 
-Для больших деталей перейдите к [инструкции по установке](lib/include/README.md)
+[Installation](lib/include/README.md)
 
 ## Contributing
 

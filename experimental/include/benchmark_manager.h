@@ -24,7 +24,7 @@ class BenchmarkManager {
    private:
     // calculate used memory
     static std::size_t GetMemoryUsage() {
-#ifdef _WIN32  // for windows
+#ifdef _WIN32  // for Windows
         PROCESS_MEMORY_COUNTERS memInfo;
         GetProcessMemoryInfo(GetCurrentProcess(), &memInfo, sizeof(memInfo));
         return memInfo.WorkingSetSize / 1024.0;
