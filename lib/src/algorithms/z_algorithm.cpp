@@ -1,6 +1,6 @@
 #include "z_algorithm.h"
 
-// Constractor saves pattern
+// Constructor saves pattern
 ZAlgorithm::ZAlgorithm(const std::string &pattern) : pattern(pattern) {}
 
 // function to compute Z-function
