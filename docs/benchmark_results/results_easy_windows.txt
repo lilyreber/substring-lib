@@ -1,0 +1,526 @@
+KMP_Naive
+  43 microseconds (single)
+  0 KB (single)
+  6 microseconds (times=100)
+  8 KB (times=100)
+Boyer-Moore_Naive
+  96 microseconds (single)
+  143 KB (single)
+  8 microseconds (times=100)
+  9 KB (times=100)
+Rabin-Karp_Naive
+  26 microseconds (single)
+  1 KB (single)
+  3 microseconds (times=100)
+  2 KB (times=100)
+Z-Algorithm_Naive
+  37 microseconds (single)
+  0 KB (single)
+  5 microseconds (times=100)
+  2 KB (times=100)
+Not-so-naive_Naive
+  28 microseconds (single)
+  0 KB (single)
+  4 microseconds (times=100)
+  2 KB (times=100)
+Suffix-Array_Naive
+  110 microseconds (single)
+  0 KB (single)
+  70 microseconds (times=100)
+  0 KB (times=100)
+---------------------------------------------------------------------------------------------------
+KMP_Random_Latin/text_size=10/pattern_size=2
+  212 microseconds (single)
+  133 KB (single)
+  12 microseconds (times=100)
+  12 KB (times=100)
+KMP_Random_Binary/text_size=10/pattern_size=2
+  48 microseconds (single)
+  133 KB (single)
+  14 microseconds (times=100)
+  10 KB (times=100)
+Boyer-Moore_Random_Latin/text_size=10/pattern_size=2
+  72 microseconds (single)
+  1 KB (single)
+  14 microseconds (times=100)
+  12 KB (times=100)
+Boyer-Moore_Random_Binary/text_size=10/pattern_size=2
+  54 microseconds (single)
+  130 KB (single)
+  12 microseconds (times=100)
+  9 KB (times=100)
+Rabin-Karp_Random_Latin/text_size=10/pattern_size=2
+  45 microseconds (single)
+  1 KB (single)
+  7 microseconds (times=100)
+  3 KB (times=100)
+Rabin-Karp_Random_Binary/text_size=10/pattern_size=2
+  38 microseconds (single)
+  1 KB (single)
+  7 microseconds (times=100)
+  2 KB (times=100)
+Z-Algorithm_Random_Latin/text_size=10/pattern_size=2
+  144 microseconds (single)
+  128 KB (single)
+  9 microseconds (times=100)
+  3 KB (times=100)
+Z-Algorithm_Random_Binary/text_size=10/pattern_size=2
+  48 microseconds (single)
+  1 KB (single)
+  10 microseconds (times=100)
+  3 KB (times=100)
+Not-so-naive_Random_Latin/text_size=10/pattern_size=2
+  47 microseconds (single)
+  1 KB (single)
+  7 microseconds (times=100)
+  3 KB (times=100)
+Not-so-naive_Random_Binary/text_size=10/pattern_size=2
+  26 microseconds (single)
+  1 KB (single)
+  7 microseconds (times=100)
+  2 KB (times=100)
+Suffix-Array_Random_Binary/text_size=10/pattern_size=2
+  36 microseconds (single)
+  1 KB (single)
+  14 microseconds (times=100)
+  0 KB (times=100)
+---------------------------------------------------------------------------------------------------
+KMP_Random_Latin/text_size=100/pattern_size=2
+  136 microseconds (single)
+  137 KB (single)
+  14 microseconds (times=100)
+  4 KB (times=100)
+KMP_Random_Binary/text_size=100/pattern_size=2
+  49 microseconds (single)
+  1 KB (single)
+  15 microseconds (times=100)
+  3 KB (times=100)
+Boyer-Moore_Random_Latin/text_size=100/pattern_size=2
+  72 microseconds (single)
+  1 KB (single)
+  16 microseconds (times=100)
+  6 KB (times=100)
+Boyer-Moore_Random_Binary/text_size=100/pattern_size=2
+  50 microseconds (single)
+  1 KB (single)
+  15 microseconds (times=100)
+  6 KB (times=100)
+Rabin-Karp_Random_Latin/text_size=100/pattern_size=2
+  44 microseconds (single)
+  1 KB (single)
+  9 microseconds (times=100)
+  3 KB (times=100)
+Rabin-Karp_Random_Binary/text_size=100/pattern_size=2
+  37 microseconds (single)
+  1 KB (single)
+  8 microseconds (times=100)
+  3 KB (times=100)
+Z-Algorithm_Random_Latin/text_size=100/pattern_size=2
+  133 microseconds (single)
+  146 KB (single)
+  36 microseconds (times=100)
+  6 KB (times=100)
+Z-Algorithm_Random_Binary/text_size=100/pattern_size=2
+  62 microseconds (single)
+  1 KB (single)
+  32 microseconds (times=100)
+  6 KB (times=100)
+Not-so-naive_Random_Latin/text_size=100/pattern_size=2
+  34 microseconds (single)
+  1 KB (single)
+  12 microseconds (times=100)
+  3 KB (times=100)
+Not-so-naive_Random_Binary/text_size=100/pattern_size=2
+  37 microseconds (single)
+  1 KB (single)
+  7 microseconds (times=100)
+  3 KB (times=100)
+Suffix-Array_Random_Latin/text_size=100/pattern_size=2
+  229 microseconds (single)
+  1 KB (single)
+  214 microseconds (times=100)
+  0 KB (times=100)
+
+Suffix-Array_Random_Binary/text_size=100/pattern_size=2
+  217 microseconds (single)
+  1 KB (single)
+  202 microseconds (times=100)
+  0 KB (times=100)
+---------------------------------------------------------------------------------------------------
+KMP_Random_Latin/text_size=1000/pattern_size=2
+  112 microseconds (single)
+  1 KB (single)
+  74 microseconds (times=100)
+  28 KB (times=100)
+KMP_Random_Binary/text_size=1000/pattern_size=2
+  133 microseconds (single)
+  1 KB (single)
+  86 microseconds (times=100)
+  28 KB (times=100)
+Boyer-Moore_Random_Latin/text_size=1000/pattern_size=2
+  72 microseconds (single)
+  1 KB (single)
+  56 microseconds (times=100)
+  13 KB (times=100)
+Boyer-Moore_Random_Binary/text_size=1000/pattern_size=2
+  67 microseconds (single)
+  1 KB (single)
+  53 microseconds (times=100)
+  18 KB (times=100)
+Rabin-Karp_Random_Latin/text_size=1000/pattern_size=2
+  53 microseconds (single)
+  1 KB (single)
+  37 microseconds (times=100)
+  12 KB (times=100)
+Rabin-Karp_Random_Binary/text_size=1000/pattern_size=2
+  43 microseconds (single)
+  1 KB (single)
+  32 microseconds (times=100)
+  9 KB (times=100)
+Z-Algorithm_Random_Latin/text_size=1000/pattern_size=2
+  323 microseconds (single)
+  1 KB (single)
+  190 microseconds (times=100)
+  44 KB (times=100)
+Z-Algorithm_Random_Binary/text_size=1000/pattern_size=2
+  313 microseconds (single)
+  140 KB (single)
+  214 microseconds (times=100)
+  35 KB (times=100)
+Not-so-naive_Random_Latin/text_size=1000/pattern_size=2
+  43 microseconds (single)
+  1 KB (single)
+  32 microseconds (times=100)
+  12 KB (times=100)
+Not-so-naive_Random_Binary/text_size=1000/pattern_size=2
+  46 microseconds (single)
+  1 KB (single)
+  23 microseconds (times=100)
+  11 KB (times=100)
+Suffix-Array_Random_Latin/text_size=1000/pattern_size=2
+  3543 microseconds (single)
+  0 KB (single)
+  3412 microseconds (times=100)
+  0 KB (times=100)
+Suffix-Array_Random_Binary/text_size=1000/pattern_size=2
+  3613 microseconds (single)
+  0 KB (single)
+  3621 microseconds (times=100)
+  0 KB (times=100)
+---------------------------------------------------------------------------------------------------
+KMP_Random_Latin/text_size=1000/pattern_size=5
+  113 microseconds (single)
+  1 KB (single)
+  82 microseconds (times=100)
+  24 KB (times=100)
+KMP_Random_Binary/text_size=1000/pattern_size=5
+  95 microseconds (single)
+  1 KB (single)
+  72 microseconds (times=100)
+  24 KB (times=100)
+Boyer-Moore_Random_Latin/text_size=1000/pattern_size=5
+  71 microseconds (single)
+  1 KB (single)
+  53 microseconds (times=100)
+  15 KB (times=100)
+Boyer-Moore_Random_Binary/text_size=1000/pattern_size=5
+  73 microseconds (single)
+  1 KB (single)
+  52 microseconds (times=100)
+  13 KB (times=100)
+Rabin-Karp_Random_Latin/text_size=1000/pattern_size=5
+  54 microseconds (single)
+  1 KB (single)
+  27 microseconds (times=100)
+  11 KB (times=100)
+Rabin-Karp_Random_Binary/text_size=1000/pattern_size=5
+  42 microseconds (single)
+  1 KB (single)
+  27 microseconds (times=100)
+  8 KB (times=100)
+Z-Algorithm_Random_Latin/text_size=1000/pattern_size=5
+  223 microseconds (single)
+  138 KB (single)
+  186 microseconds (times=100)
+  35 KB (times=100)
+Z-Algorithm_Random_Binary/text_size=1000/pattern_size=5
+  233 microseconds (single)
+  142 KB (single)
+  205 microseconds (times=100)
+  37 KB (times=100)
+Not-so-naive_Random_Latin/text_size=1000/pattern_size=5
+  43 microseconds (single)
+  1 KB (single)
+  27 microseconds (times=100)
+  9 KB (times=100)
+Not-so-naive_Random_Binary/text_size=1000/pattern_size=5
+  39 microseconds (single)
+  1 KB (single)
+  27 microseconds (times=100)
+  8 KB (times=100)
+Suffix-Array_Random_Latin/text_size=1000/pattern_size=5
+  3712 microseconds (single)
+  0 KB (single)
+  3403 microseconds (times=100)
+  0 KB (times=100)
+Suffix-Array_Random_Binary/text_size=1000/pattern_size=5
+  3604 microseconds (single)
+  0 KB (single)
+  3509 microseconds (times=100)
+  0 KB (times=100)
+---------------------------------------------------------------------------------------------------
+KMP_Random_Latin/text_size=10000/pattern_size=5
+  812 microseconds (single)
+  403 KB (single)
+  652 microseconds (times=100)
+  212 KB (times=100)
+KMP_Random_Binary/text_size=10000/pattern_size=5
+  812 microseconds (single)
+  423 KB (single)
+  651 microseconds (times=100)
+  207 KB (times=100)
+Boyer-Moore_Random_Latin/text_size=10000/pattern_size=5
+  532 microseconds (single)
+  211 KB (single)
+  452 microseconds (times=100)
+  99 KB (times=100)
+Boyer-Moore_Random_Binary/text_size=10000/pattern_size=5
+  453 microseconds (single)
+  0 KB (single)
+  421 microseconds (times=100)
+  102 KB (times=100)
+Rabin-Karp_Random_Latin/text_size=10000/pattern_size=5
+  253 microseconds (single)
+  202 KB (single)
+  224 microseconds (times=100)
+  83 KB (times=100)
+Rabin-Karp_Random_Binary/text_size=10000/pattern_size=5
+  198 microseconds (single)
+  202 KB (single)
+  214 microseconds (times=100)
+  81 KB (times=100)
+Z-Algorithm_Random_Latin/text_size=10000/pattern_size=5
+  2023 microseconds (single)
+  402 KB (single)
+  1820 microseconds (times=100)
+  302 KB (times=100)
+Z-Algorithm_Random_Binary/text_size=10000/pattern_size=5
+  2209 microseconds (single)
+  415 KB (single)
+  2102 microseconds (times=100)
+  306 KB (times=100)
+Not-so-naive_Random_Latin/text_size=10000/pattern_size=5
+  253 microseconds (single)
+  202 KB (single)
+  245 microseconds (times=100)
+  81 KB (times=100)
+Not-so-naive_Random_Binary/text_size=10000/pattern_size=5
+  252 microseconds (single)
+  0 KB (single)
+  224 microseconds (times=100)
+  80 KB (times=100)
+---------------------------------------------------------------------------------------------------
+KMP_Random_Latin/text_size=100000/pattern_size=2
+  6014 microseconds (single)
+  1609 KB (single)
+  5923 microseconds (times=100)
+  1504 KB (times=100)
+KMP_Random_Binary/text_size=100000/pattern_size=2
+  6522 microseconds (single)
+  1614 KB (single)
+  6209 microseconds (times=100)
+  902 KB (times=100)
+Boyer-Moore_Random_Latin/text_size=100000/pattern_size=2
+  3211 microseconds (single)
+  0 KB (single)
+  3307 microseconds (times=100)
+  33 KB (times=100)
+Boyer-Moore_Random_Binary/text_size=100000/pattern_size=2
+  3212 microseconds (single)
+  0 KB (single)
+  3111 microseconds (times=100)
+  0 KB (times=100)
+Rabin-Karp_Random_Latin/text_size=100000/pattern_size=2
+  1603 microseconds (single)
+  0 KB (single)
+  1721 microseconds (times=100)
+  0 KB (times=100)
+Rabin-Karp_Random_Binary/text_size=100000/pattern_size=2
+  1612 microseconds (single)
+  0 KB (single)
+  1726 microseconds (times=100)
+  0 KB (times=100)
+Z-Algorithm_Random_Latin/text_size=100000/pattern_size=2
+  20013 microseconds (single)
+  0 KB (single)
+  19505 microseconds (times=100)
+  1211 KB (times=100)
+Z-Algorithm_Random_Binary/text_size=100000/pattern_size=2
+  22021 microseconds (single)
+  0 KB (single)
+  21514 microseconds (times=100)
+  157 KB (times=100)
+Not-so-naive_Random_Latin/text_size=100000/pattern_size=2
+  1606 microseconds (single)
+  0 KB (single)
+  1714 microseconds (times=100)
+  0 KB (times=100)
+Not-so-naive_Random_Binary/text_size=100000/pattern_size=2
+  1713 microseconds (single)
+  0 KB (single)
+  1634 microseconds (times=100)
+  0 KB (times=100)
+---------------------------------------------------------------------------------------------------
+KMP_Random_Latin/text_size=100000/pattern_size=10
+  6031 microseconds (single)
+  0 KB (single)
+  5903 microseconds (times=100)
+  0 KB (times=100)
+KMP_Random_Binary/text_size=100000/pattern_size=10
+  6517 microseconds (single)
+  0 KB (single)
+  6109 microseconds (times=100)
+  0 KB (times=100)
+Boyer-Moore_Random_Latin/text_size=100000/pattern_size=10
+  3231 microseconds (single)
+  0 KB (single)
+  3009 microseconds (times=100)
+  0 KB (times=100)
+Boyer-Moore_Random_Binary/text_size=100000/pattern_size=10
+  3211 microseconds (single)
+  0 KB (single)
+  2916 microseconds (times=100)
+  0 KB (times=100)
+Rabin-Karp_Random_Latin/text_size=100000/pattern_size=10
+  1822 microseconds (single)
+  0 KB (single)
+  1731 microseconds (times=100)
+  0 KB (times=100)
+Rabin-Karp_Random_Binary/text_size=100000/pattern_size=10
+  1709 microseconds (single)
+  0 KB (single)
+  1622 microseconds (times=100)
+  0 KB (times=100)
+
+Z-Algorithm_Random_Latin/text_size=100000/pattern_size=10
+  25036 microseconds (single)
+  0 KB (single)
+  24072 microseconds (times=100)
+  0 KB (times=100)
+Z-Algorithm_Random_Binary/text_size=100000/pattern_size=10
+  27042 microseconds (single)
+  0 KB (single)
+  26014 microseconds (times=100)
+  0 KB (times=100)
+Not-so-naive_Random_Latin/text_size=100000/pattern_size=10
+  1704 microseconds (single)
+  0 KB (single)
+  1818 microseconds (times=100)
+  0 KB (times=100)
+Not-so-naive_Random_Binary/text_size=100000/pattern_size=10
+  1634 microseconds (single)
+  0 KB (single)
+  1519 microseconds (times=100)
+  0 KB (times=100)
+---------------------------------------------------------------------------------------------------
+KMP_Random_Latin/text_size=10000000/pattern_size=5
+  500194 microseconds (single)
+  0 KB (single)
+  510093 microseconds (times=100)
+  272 KB (times=100)
+KMP_Random_Binary/text_size=10000000/pattern_size=5
+  560162 microseconds (single)
+  0 KB (single)
+  560411 microseconds (times=100)
+  0 KB (times=100)
+Boyer-Moore_Random_Latin/text_size=10000000/pattern_size=5
+  300096 microseconds (single)
+  0 KB (single)
+  320211 microseconds (times=100)
+  0 KB (times=100)
+Boyer-Moore_Random_Binary/text_size=10000000/pattern_size=5
+  300478 microseconds (single)
+  0 KB (single)
+  310351 microseconds (times=100)
+  0 KB (times=100)
+Rabin-Karp_Random_Latin/text_size=10000000/pattern_size=5
+  180103 microseconds (single)
+  0 KB (single)
+  170241 microseconds (times=100)
+  0 KB (times=100)
+Rabin-Karp_Random_Binary/text_size=10000000/pattern_size=5
+  170316 microseconds (single)
+  0 KB (single)
+  170152 microseconds (times=100)
+  0 KB (times=100)
+Z-Algorithm_Random_Latin/text_size=10000000/pattern_size=5
+  2.500912e+06 microseconds (single)
+  150000 KB (single)
+  2.500314e+06 microseconds (times=100)
+  400 KB (times=100)
+Z-Algorithm_Random_Binary/text_size=10000000/pattern_size=5
+  2.130453e+06 microseconds (single)
+  0 KB (single)
+  2.402710e+06 microseconds (times=100)
+  0 KB (times=100)
+Not-so-naive_Random_Latin/text_size=10000000/pattern_size=5
+  190671 microseconds (single)
+  0 KB (single)
+  170791 microseconds (times=100)
+  0 KB (times=100)
+Not-so-naive_Random_Binary/text_size=10000000/pattern_size=5
+  170632 microseconds (single)
+  0 KB (single)
+  170149 microseconds (times=100)
+  0 KB (times=100)
+---------------------------------------------------------------------------------------------------
+KMP_Random_Latin/text_size=10000000/pattern_size=15
+  520592 microseconds (single)
+  0 KB (single)
+  530246 microseconds (times=100)
+  0 KB (times=100)
+KMP_Random_Binary/text_size=10000000/pattern_size=15
+  570273 microseconds (single)
+  0 KB (single)
+  580832 microseconds (times=100)
+  0 KB (times=100)
+Boyer-Moore_Random_Latin/text_size=10000000/pattern_size=15
+  310687 microseconds (single)
+  0 KB (single)
+  320692 microseconds (times=100)
+  0 KB (times=100)
+Boyer-Moore_Random_Binary/text_size=10000000/pattern_size=15
+  310602 microseconds (single)
+  0 KB (single)
+  310563 microseconds (times=100)
+  0 KB (times=100)
+Rabin-Karp_Random_Latin/text_size=10000000/pattern_size=15
+  181053 microseconds (single)
+  0 KB (single)
+  180629 microseconds (times=100)
+  0 KB (times=100)
+Rabin-Karp_Random_Binary/text_size=10000000/pattern_size=15
+  170641 microseconds (single)
+  0 KB (single)
+  170649 microseconds (times=100)
+  0 KB (times=100)
+Z-Algorithm_Random_Latin/text_size=10000000/pattern_size=10
+  2.504163e+06 microseconds (single)
+  0 KB (single)
+  2.512414e+06 microseconds (times=100)
+  0 KB (times=100)
+Z-Algorithm_Random_Binary/text_size=10000000/pattern_size=15
+  2.1033604e+06 microseconds (single)
+  0 KB (single)
+  2.213427e+06 microseconds (times=100)
+  0 KB (times=100)
+Not-so-naive_Random_Latin/text_size=10000000/pattern_size=15
+  200198 microseconds (single)
+  0 KB (single)
+  180717 microseconds (times=100)
+  0 KB (times=100)
+Not-so-naive_Random_Binary/text_size=10000000/pattern_size=15
+  170316 microseconds (single)
+  0 KB (single)
+  170892 microseconds (times=100)
+  0 KB (times=100)
