@@ -31,12 +31,12 @@ class ExperimentalEasy : public ExperimentalBase {
     // Specify all algorithms which will be measured, for each pair of text-pattern sizes
     void RunExperiments() override {
         for (auto [textSize, patternSize] : random_sizes) {
-            // RunExperiment<AlgorithmType::KMP>("KMP", textSize, patternSize);
-            // RunExperiment<AlgorithmType::BOYER_MOORE>("Boyer-Moore", textSize, patternSize);
-            // RunExperiment<AlgorithmType::RABIN_KARP>("Rabin-Karp", textSize, patternSize);
+            RunExperiment<AlgorithmType::KMP>("KMP", textSize, patternSize);
+            RunExperiment<AlgorithmType::BOYER_MOORE>("Boyer-Moore", textSize, patternSize);
+            RunExperiment<AlgorithmType::RABIN_KARP>("Rabin-Karp", textSize, patternSize);
             RunExperiment<AlgorithmType::SUFFIX_ARRAY>("Suffix-Array", textSize, patternSize);
-            // RunExperiment<AlgorithmType::Z_ALGORITHM>("Z-Algorithm", textSize, patternSize);
-            // RunExperiment<AlgorithmType::NOT_SO_NAIVE>("Not-so-naive", textSize, patternSize);
+            RunExperiment<AlgorithmType::Z_ALGORITHM>("Z-Algorithm", textSize, patternSize);
+            RunExperiment<AlgorithmType::NOT_SO_NAIVE>("Not-so-naive", textSize, patternSize);
         }
     }
 };
